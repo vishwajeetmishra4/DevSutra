@@ -1,13 +1,13 @@
 /* ==========================================================================
-   DevSutra - Core Stylesheet
+   DevSutra - Complete Stylesheet
    Palette:
-     - #EAE6DE (Cream Light Base / Text Accent)
-     - #226192 (Deep Sapphire / Primary Accent)
-     - #EF8557 (Coral Accent / Vibrant Highlights)
+     - #EAE6DE (Cream Light Base / Canvas)
+     - #226192 (Deep Sapphire / Primary Brand)
+     - #EF8557 (Vibrant Coral / Accent Highlights)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. COLOR VARIABLES & THEME CONFIGURATION
+   1. CSS VARIABLES & THEME CONFIGURATION
    -------------------------------------------------------------------------- */
 :root {
   /* Brand Palette Core */
@@ -15,29 +15,26 @@
   --c-sapphire: #226192;
   --c-coral: #EF8557;
 
-  /* Light Theme Defaults (Glassmorphic) */
+  /* Light Theme Glass System */
   --bg-body: #EAE6DE;
-  --bg-gradient: radial-gradient(circle at 10% 10%, rgba(34, 97, 146, 0.12) 0%, transparent 40%),
-                 radial-gradient(circle at 90% 80%, rgba(239, 133, 87, 0.12) 0%, transparent 40%),
+  --bg-gradient: radial-gradient(circle at 15% 15%, rgba(34, 97, 146, 0.15) 0%, transparent 45%),
+                 radial-gradient(circle at 85% 85%, rgba(239, 133, 87, 0.15) 0%, transparent 45%),
                  #EAE6DE;
   
-  --text-main: #183348;
+  --text-main: #142836;
   --text-muted: #4b6272;
-  
-  /* Glass Surfaces */
-  --glass-bg: rgba(255, 255, 255, 0.45);
-  --glass-bg-hover: rgba(255, 255, 255, 0.65);
-  --glass-border: rgba(34, 97, 146, 0.12);
-  --glass-border-hover: rgba(239, 133, 87, 0.4);
+
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-bg-hover: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(34, 97, 146, 0.15);
+  --glass-border-hover: rgba(239, 133, 87, 0.45);
   --glass-shadow: 0 8px 32px 0 rgba(34, 97, 146, 0.08);
 
-  /* Primary Interactive Elements */
   --primary: var(--c-sapphire);
   --primary-hover: #1b4f77;
   --accent: var(--c-coral);
   --accent-hover: #e06e3d;
 
-  /* Utility Specs */
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -48,16 +45,16 @@
 
 /* Dark Theme Overrides */
 [data-theme="dark"] {
-  --bg-body: #0d1b2a;
+  --bg-body: #0a1420;
   --bg-gradient: radial-gradient(circle at 15% 15%, rgba(34, 97, 146, 0.35) 0%, transparent 50%),
-                 radial-gradient(circle at 85% 75%, rgba(239, 133, 87, 0.25) 0%, transparent 50%),
+                 radial-gradient(circle at 85% 85%, rgba(239, 133, 87, 0.25) 0%, transparent 50%),
                  #0a1420;
 
   --text-main: #EAE6DE;
   --text-muted: #a0b2c6;
 
-  --glass-bg: rgba(14, 28, 44, 0.55);
-  --glass-bg-hover: rgba(20, 39, 61, 0.75);
+  --glass-bg: rgba(14, 28, 44, 0.65);
+  --glass-bg-hover: rgba(20, 39, 61, 0.85);
   --glass-border: rgba(234, 230, 222, 0.12);
   --glass-border-hover: rgba(239, 133, 87, 0.5);
   --glass-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.35);
@@ -67,7 +64,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   2. RESET & GLOBAL BASE STYLES
+   2. RESET & BASE LAYOUT
    -------------------------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -104,7 +101,6 @@ img, svg {
   display: block;
 }
 
-/* Layout Container */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -118,9 +114,7 @@ img, svg {
   text-align: center;
 }
 
-/* --------------------------------------------------------------------------
-   3. GLASSMORPHIC COMPONENT UTILITIES
-   -------------------------------------------------------------------------- */
+/* Glass Surface Utility */
 .glass-panel {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--blur));
@@ -136,7 +130,7 @@ img, svg {
   background: var(--glass-bg-hover);
 }
 
-/* Grid Layout Systems */
+/* Grid Framework */
 .grid {
   display: grid;
   gap: 1.75rem;
@@ -150,7 +144,7 @@ img, svg {
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* Section Common Headings */
+/* Section Common Titles */
 .section {
   padding: 5rem 0;
 }
@@ -167,7 +161,7 @@ img, svg {
 
 .section-description {
   color: var(--text-muted);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -175,7 +169,7 @@ img, svg {
 }
 
 /* --------------------------------------------------------------------------
-   4. BUTTONS & INTERACTIVE ELEMENTS
+   3. BUTTONS & INTERACTIVE ELEMENTS
    -------------------------------------------------------------------------- */
 .btn {
   display: inline-flex;
@@ -249,7 +243,7 @@ img, svg {
 }
 
 /* --------------------------------------------------------------------------
-   5. HEADER & NAVIGATION BAR
+   4. HEADER & STICKY NAVIGATION
    -------------------------------------------------------------------------- */
 .header {
   position: sticky;
@@ -270,7 +264,6 @@ img, svg {
   gap: 1.5rem;
 }
 
-/* Brand Logo */
 .brand-logo {
   display: flex;
   align-items: center;
@@ -286,7 +279,6 @@ img, svg {
   filter: drop-shadow(0 2px 8px rgba(239, 133, 87, 0.4));
 }
 
-/* Navigation Links */
 .nav-list {
   display: flex;
   align-items: center;
@@ -307,7 +299,6 @@ img, svg {
   color: var(--accent);
 }
 
-/* Header Actions & Search */
 .header-actions {
   display: flex;
   align-items: center;
@@ -358,7 +349,6 @@ img, svg {
   pointer-events: none;
 }
 
-/* Light / Dark Mode Toggle */
 .theme-toggle {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid var(--glass-border);
@@ -379,7 +369,7 @@ img, svg {
 }
 
 /* --------------------------------------------------------------------------
-   6. HERO SECTION
+   5. HERO SECTION
    -------------------------------------------------------------------------- */
 .hero-section {
   padding: 6rem 0 4rem 0;
@@ -430,11 +420,6 @@ img, svg {
   color: var(--text-muted);
 }
 
-/* Hero Code Graphic Mockup */
-.hero-visual {
-  position: relative;
-}
-
 .code-preview-card {
   background: #0d1b2a;
   border: 1px solid rgba(234, 230, 222, 0.15);
@@ -458,11 +443,7 @@ img, svg {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
 .dot.red { background: #ff5f56; }
 .dot.yellow { background: #ffbd2e; }
 .dot.green { background: #27c93f; }
@@ -488,13 +469,12 @@ img, svg {
 .string { color: #e5c07b; }
 
 /* --------------------------------------------------------------------------
-   7. CORE CONTENT - ROADMAP CARDS
+   6. ROADMAP CARDS
    -------------------------------------------------------------------------- */
 .roadmap-card {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .card-icon {
@@ -543,21 +523,35 @@ img, svg {
 }
 
 /* --------------------------------------------------------------------------
-   8. TECH INTERVIEW PREP & GLOSSARY (SPLIT LAYOUT)
+   7. TECH INTERVIEW PREP & GLOSSARY (SPLIT CONTAINER STYLING)
    -------------------------------------------------------------------------- */
 .interview-prep-section .split-col {
   padding: 2.5rem;
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-/* Category Tags */
+.split-col-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.split-col-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Category Filter Tags */
 .category-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin: 1.25rem 0;
+  margin-bottom: 1.5rem;
 }
 
 .tag {
@@ -568,20 +562,86 @@ img, svg {
   font-size: 0.8rem;
   font-weight: 700;
   border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tag:hover, .tag.active {
+  background: var(--primary);
+  color: #ffffff;
 }
 
 [data-theme="dark"] .tag {
   color: var(--c-cream);
 }
 
-/* Featured Sample Question Card */
+/* Accordion Component */
+.accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.accordion-item {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+[data-theme="dark"] .accordion-item {
+  background: rgba(10, 20, 32, 0.4);
+}
+
+.accordion-header {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.accordion-header:hover {
+  color: var(--accent);
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+  color: var(--text-muted);
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+  color: var(--accent);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out, padding 0.35s ease;
+  padding: 0 1.25rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.accordion-item.active .accordion-content {
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  max-height: 200px;
+}
+
+/* Featured Single Question Card */
 .sample-question-card {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   border: 1px solid var(--glass-border);
   border-left: 4px solid var(--accent);
   border-radius: var(--radius-md);
   padding: 1.25rem;
-  margin: 1.5rem 0;
+  margin-bottom: 1.5rem;
 }
 
 .question-badge {
@@ -605,28 +665,27 @@ img, svg {
   color: var(--text-muted);
 }
 
-/* Glossary Pills Grid */
+/* Glossary Pills & Cards Grid */
 .glossary-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin: 1.75rem 0;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
 }
 
 .pill {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  padding: 0.5rem 1rem;
+  padding: 0.45rem 0.95rem;
   border-radius: var(--radius-full);
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-main);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
   transition: var(--transition);
   cursor: pointer;
 }
 
-.pill:hover {
+.pill:hover, .pill.active {
   background: var(--accent);
   color: #ffffff;
   border-color: var(--accent);
@@ -634,8 +693,33 @@ img, svg {
   box-shadow: 0 4px 15px rgba(239, 133, 87, 0.35);
 }
 
+.pill-card {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+[data-theme="dark"] .pill-card {
+  background: rgba(10, 20, 32, 0.4);
+}
+
+.pill-card-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+}
+
+.pill-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 /* --------------------------------------------------------------------------
-   9. VALUE PROPOSITION SECTION
+   8. VALUE PROPOSITION SECTION
    -------------------------------------------------------------------------- */
 .value-card {
   padding: 2.25rem;
@@ -656,10 +740,10 @@ img, svg {
 }
 
 /* --------------------------------------------------------------------------
-   10. FOOTER
+   9. FOOTER
    -------------------------------------------------------------------------- */
 .footer {
-  background: rgba(13, 27, 42, 0.95);
+  background: rgba(10, 20, 32, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-top: 1px solid var(--glass-border);
@@ -743,7 +827,7 @@ img, svg {
 }
 
 /* --------------------------------------------------------------------------
-   11. RESPONSIVE BREAKPOINTS
+   10. RESPONSIVE BREAKPOINTS
    -------------------------------------------------------------------------- */
 @media (max-width: 992px) {
   .hero-container {
