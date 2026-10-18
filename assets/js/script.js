@@ -3,11 +3,11 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Initialize features
   initThemeToggle();
   initSearchShortcut();
   initLiveSearch();
-  initGlossaryPills();
+  initAccordions();
+  initGlossaryInteractivity();
   initHeaderScrollEffect();
 });
 
@@ -18,7 +18,6 @@ function initThemeToggle() {
   const themeToggleBtn = document.getElementById('themeToggle');
   if (!themeToggleBtn) return;
 
-  // SVG icons for Theme Button
   const sunIcon = `
     <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <circle cx="12" cy="12" r="5"></circle>
@@ -37,7 +36,6 @@ function initThemeToggle() {
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
     </svg>`;
 
-  // Check saved theme preference or default to system preference
   const savedTheme = localStorage.getItem('devsutra-theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -49,7 +47,6 @@ function initThemeToggle() {
     themeToggleBtn.innerHTML = moonIcon;
   }
 
-  // Toggle Theme Event
   themeToggleBtn.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     let targetTheme = 'light';
@@ -67,21 +64,19 @@ function initThemeToggle() {
 }
 
 /* ==========================================================================
-   2. KEYBOARD SHORTCUT (Ctrl + K / Cmd + K) TO FOCUS SEARCH
+   2. KEYBOARD SHORTCUT (Ctrl + K) TO FOCUS SEARCH
    ========================================================================== */
 function initSearchShortcut() {
   const searchInput = document.getElementById('site-search');
   if (!searchInput) return;
 
   document.addEventListener('keydown', (e) => {
-    // Check for Ctrl+K or Cmd+K
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
-      e.preventDefault(); // Prevent default browser search focus if any
+      e.preventDefault();
       searchInput.focus();
       searchInput.select();
     }
 
-    // Press Escape to blur search
     if (e.key === 'Escape' && document.activeElement === searchInput) {
       searchInput.blur();
     }
@@ -89,19 +84,17 @@ function initSearchShortcut() {
 }
 
 /* ==========================================================================
-   3. LIVE SEARCH FILTERING (Roadmaps & Glossary Terms)
+   3. LIVE SEARCH FILTERING (Roadmap Cards)
    ========================================================================== */
 function initLiveSearch() {
   const searchInput = document.getElementById('site-search');
   const roadmapCards = document.querySelectorAll('.roadmap-card');
-  const glossaryPills = document.querySelectorAll('.pill');
 
   if (!searchInput) return;
 
   searchInput.addEventListener('input', (e) => {
     const query = e.target.value.trim().toLowerCase();
 
-    // Filter Roadmap Cards
     roadmapCards.forEach((card) => {
       const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
       const text = card.querySelector('.card-text')?.textContent.toLowerCase() || '';
@@ -112,43 +105,89 @@ function initLiveSearch() {
         card.style.display = 'none';
       }
     });
+  });
+}
 
-    // Highlight / Filter Glossary Pills
-    glossaryPills.forEach((pill) => {
-      const term = pill.textContent.toLowerCase();
-      if (query && term.includes(query)) {
-        pill.style.background = 'var(--accent)';
-        pill.style.color = '#ffffff';
-      } else {
-        pill.style.background = '';
-        pill.style.color = '';
+/* ==========================================================================
+   4. INTERVIEW PREP ACCORDIONS
+   ========================================================================== */
+function initAccordions() {
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+  accordionHeaders.forEach((header) => {
+    header.addEventListener('click', () => {
+      const accordionItem = header.parentElement;
+      const isActive = accordionItem.classList.contains('active');
+
+      // Close other accordions in the group if desired (optional accordion behavior)
+      const group = accordionItem.closest('.accordion-group');
+      if (group) {
+        group.querySelectorAll('.accordion-item').forEach((item) => {
+          item.classList.remove('active');
+        });
+      }
+
+      // Toggle current
+      if (!isActive) {
+        accordionItem.classList.add('active');
       }
     });
   });
 }
 
 /* ==========================================================================
-   4. INTERACTIVE GLOSSARY PILLS
+   5. INTERACTIVE GLOSSARY PILLS & DEFINITIONS
    ========================================================================== */
-function initGlossaryPills() {
+function initGlossaryInteractivity() {
   const pills = document.querySelectorAll('.pill');
-  const searchInput = document.getElementById('site-search');
+  const termTitle = document.getElementById('termTitle');
+  const termDesc = document.getElementById('termDesc');
+
+  // Dictionary mock data for pills
+  const glossaryData = {
+    "idempotency": {
+      title: "Idempotency",
+      desc: "An operation is idempotent if executing it multiple times produces the exact same result as executing it once. Essential for safe API design (e.g., HTTP PUT/DELETE requests)."
+    },
+    "cap theorem": {
+      title: "CAP Theorem",
+      desc: "States that a distributed data store can simultaneously provide at most two of the following three guarantees: Consistency, Availability, and Partition tolerance."
+    },
+    "cors": {
+      title: "CORS (Cross-Origin Resource Sharing)",
+      desc: "An HTTP-header based mechanism that allows a server to indicate any origins other than its own from which a browser should permit loading resources."
+    },
+    "rate limiting": {
+      title: "Rate Limiting",
+      desc: "A strategy used to control the amount of incoming traffic to a service, preventing server overload, DDoS attacks, and ensuring fair usage."
+    },
+    "sharding": {
+      title: "Sharding",
+      desc: "A database architecture pattern that splits large databases into smaller, faster, more easily managed pieces called data shards across multiple servers."
+    },
+    "load balancing": {
+      title: "Load Balancing",
+      desc: "Efficiently distributing incoming network traffic across a backend cluster of servers to guarantee high availability and reliability."
+    }
+  };
 
   pills.forEach((pill) => {
     pill.addEventListener('click', () => {
-      const term = pill.textContent.trim();
-      if (searchInput) {
-        searchInput.value = term;
-        // Trigger live search event
-        searchInput.dispatchEvent(new Event('input'));
-        searchInput.focus();
+      // Remove active class from all pills
+      pills.forEach((p) => p.classList.remove('active'));
+      pill.classList.add('active');
+
+      const key = pill.textContent.trim().toLowerCase();
+      if (glossaryData[key] && termTitle && termDesc) {
+        termTitle.textContent = glossaryData[key].title;
+        termDesc.textContent = glossaryData[key].desc;
       }
     });
   });
 }
 
 /* ==========================================================================
-   5. HEADER SCROLL SHADOW EFFECT
+   6. HEADER SCROLL SHADOW EFFECT
    ========================================================================== */
 function initHeaderScrollEffect() {
   const header = document.querySelector('.header');
