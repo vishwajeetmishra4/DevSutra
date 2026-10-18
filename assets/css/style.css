@@ -1010,3 +1010,68 @@ img, svg {
     font-size: 1.75rem;
   }
 }
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .grid-3-col {
+    grid-template-columns: repeat(2, 1fr); /* Force 2 columns on tablets instead of 3 cramped ones */
+  }
+}
+
+/* ==========================================================================
+   FOOLPROOF MOBILE RESPONSIVE OVERRIDE (Paste at bottom of styles.css)
+   ========================================================================== */
+@media screen and (max-width: 900px) {
+  .hero-container,
+  .grid-2-col,
+  .grid-3-col,
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .hero-title {
+    font-size: 2.25rem !important;
+  }
+
+  .header-container {
+    flex-wrap: wrap !important;
+  }
+
+  .nav-menu {
+    display: flex !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    padding-bottom: 0.5rem;
+  }
+
+  .header-actions {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  .search-box {
+    flex-grow: 1 !important;
+  }
+
+  .search-box input {
+    width: 100% !important;
+  }
+
+  .hero-cta-group {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .hero-cta-group .btn {
+    width: 100% !important;
+  }
+
+  .card,
+  .roadmap-card,
+  .split-col,
+  .value-card {
+    width: 100% !important;
+    padding: 1.5rem !important;
+  }
+}
+
