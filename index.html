@@ -1,12 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DevSutra - Master Tech Skills & Land Your Dream Job with Confidence. Structured career roadmaps, real-world interview questions, and tech glossaries." />
+  <title>DevSutra - Tech Career & Skill-Mastery Platform</title>
+
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
 </head>
 <body>
-    <h5>Hello Developers</h5>
-    <H1>DevSutra</H1>
+
+  <!-- =========================================================================
+       1. HEADER (NAVIGATION BAR)
+       ========================================================================= -->
+  <header class="header">
+    <div class="container header-container">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="brand-logo" aria-label="DevSutra Home">
+        <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        <span class="logo-text">DevSutra</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item dropdown">
+            <a href="#roadmaps" class="nav-link">
+              Roadmaps
+              <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#interview-prep" class="nav-link">Interview Prep</a>
+          </li>
+          <li class="nav-item">
+            <a href="#community" class="nav-link">Community / Blog</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Search Input with Keyboard Shortcut Indicator -->
+        <div class="search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="search" id="site-search" placeholder="Search roadmaps, topics, terms..." aria-label="Search content" />
+          <kbd class="search-shortcut">Ctrl K</kbd>
+        </div>
+
+        <!-- Light / Dark Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#get-started" class="btn btn-primary">Explore Roadmaps</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. HERO SECTION (ABOVE THE FOLD)
+       ========================================================================= -->
+  <section class="hero-section">
+    <div class="container hero-container">
+      
+      <div class="hero-content">
+        <h1 class="hero-title">Master Tech Skills &amp; Land Your Dream Job with Confidence.</h1>
+        <p class="hero-subtitle">
+          Step-by-step career roadmaps, real-world interview questions, and essential tech terminologies curated for developers at all levels.
+        </p>
+
+        <!-- Dual Call to Actions -->
+        <div class="hero-cta-group">
+          <a href="#roadmaps" class="btn btn-primary btn-large">Explore Roadmaps</a>
+          <a href="#interview-prep" class="btn btn-outline btn-large">Browse Interview Q&amp;A</a>
+        </div>
+
+        <!-- Social Proof / Trust Badge -->
+        <div class="hero-trust-badge">
+          <span class="trust-text">Trusted by learners aiming for FAANG, startups, and top tech roles.</span>
+        </div>
+      </div>
+
+      <!-- Hero Visual / Graphic Mockup -->
+      <div class="hero-visual">
+        <div class="code-preview-card">
+          <div class="card-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="file-title">devsutra_roadmap.config.ts</span>
+          </div>
+          <div class="card-body">
+            <pre><code><span class="keyword">const</span> <span class="variable">careerPath</span> = {
+  <span class="property">goal</span>: <span class="string">'Senior Full Stack Engineer'</span>,
+  <span class="property">status</span>: <span class="string">'In Progress'</span>,
+  <span class="property">milestones</span>: [
+    <span class="string">'System Design Fundamentals'</span>,
+    <span class="string">'Distributed Databases'</span>,
+    <span class="string">'Frontend Performance'</span>
+  ]
+};</code></pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. CORE CONTENT SECTIONS
+       ========================================================================= -->
+  <main id="main-content">
+
+    <!-- A. POPULAR CAREER & SKILL ROADMAPS SECTION -->
+    <section id="roadmaps" class="section roadmaps-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <h2 class="section-title">Popular Career &amp; Skill Roadmaps</h2>
+          <p class="section-description">Clear, step-by-step learning paths designed to guide you from beginner to job-ready.</p>
+        </div>
+
+        <!-- Roadmaps Grid -->
+        <div class="grid grid-3-col">
+          
+          <!-- Card 1 -->
+          <article class="card roadmap-card">
+            <div class="card-icon">💻</div>
+            <h3 class="card-title">Frontend Developer</h3>
+            <p class="card-text">Master HTML, CSS, JavaScript, React, and modern web performance optimization techniques.</p>
+            <a href="/roadmaps/frontend" class="card-link">View Roadmap <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card roadmap-card">
+            <div class="card-icon">⚙️</div>
+            <h3 class="card-title">Backend Developer</h3>
+            <p class="card-text">Learn system architecture, APIs, databases, microservices, and server-side engineering.</p>
+            <a href="/roadmaps/backend" class="card-link">View Roadmap <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card roadmap-card">
+            <div class="card-icon">🚀</div>
+            <h3 class="card-title">DevOps Engineer</h3>
+            <p class="card-text">Understand CI/CD pipelines, Docker, Kubernetes, cloud platforms (AWS/GCP), and IaC.</p>
+            <a href="/roadmaps/devops" class="card-link">View Roadmap <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card roadmap-card">
+            <div class="card-icon">⚡</div>
+            <h3 class="card-title">Full Stack Developer</h3>
+            <p class="card-text">Combine client and server mastery to build end-to-end scalable web applications.</p>
+            <a href="/roadmaps/fullstack" class="card-link">View Roadmap <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="card roadmap-card">
+            <div class="card-icon">📊</div>
+            <h3 class="card-title">Data Scientist</h3>
+            <p class="card-text">Explore statistics, Python, data analysis, machine learning pipelines, and visualization.</p>
+            <a href="/roadmaps/data-science" class="card-link">View Roadmap <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="card roadmap-card">
+            <div class="card-icon">🤖</div>
+            <h3 class="card-title">AI / ML Engineer</h3>
+            <p class="card-text">Dive deep into neural networks, LLMs, NLP, PyTorch, and deploying machine learning models.</p>
+            <a href="/roadmaps/ai-ml" class="card-link">View Roadmap <span aria-hidden="true">&rarr;</span></a>
+          </article>
+
+        </div>
+
+        <div class="section-footer text-center">
+          <a href="/roadmaps" class="btn btn-secondary">View All Roadmaps</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- B. TECH INTERVIEW PREP SECTION (SPLIT LAYOUT) -->
+    <section id="interview-prep" class="section interview-prep-section">
+      <div class="container">
+        
+        <div class="grid grid-2-col">
+          
+          <!-- Left Column: Skills-Based Interview Questions -->
+          <div class="split-col interview-questions">
+            <h2 class="section-title">Skills-Based Interview Questions</h2>
+            <p class="section-description">Real-world technical questions categorized by language and framework.</p>
+            
+            <!-- Category Pills -->
+            <div class="category-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">Python</span>
+              <span class="tag">System Design</span>
+              <span class="tag">SQL</span>
+            </div>
+
+            <!-- Featured Sample Question Card -->
+            <div class="sample-question-card">
+              <span class="question-badge">Featured Question</span>
+              <h3 class="question-text">"What is event delegation in JavaScript and why is it useful?"</h3>
+              <p class="question-preview">Event delegation is a pattern where you attach a single event listener to a parent element to manage events for multiple child elements using event bubbling...</p>
+            </div>
+
+            <a href="/interview-questions" class="btn-link">Browse All Interview Questions <span aria-hidden="true">&rarr;</span></a>
+          </div>
+
+          <!-- Right Column: Most Used Terms in Tech Interviews -->
+          <div class="split-col tech-glossary">
+            <h2 class="section-title">Most Used Terms in Tech Interviews</h2>
+            <p class="section-description">Essential architecture, networking, and engineering concepts you must know.</p>
+
+            <!-- Quick-Glance Pill Tags -->
+            <div class="glossary-pills">
+              <span class="pill">Idempotency</span>
+              <span class="pill">CAP Theorem</span>
+              <span class="pill">CORS</span>
+              <span class="pill">Rate Limiting</span>
+              <span class="pill">Sharding</span>
+              <span class="pill">Load Balancing</span>
+              <span class="pill">ACID Properties</span>
+              <span class="pill">WebSockets</span>
+            </div>
+
+            <a href="/glossary" class="btn-link">Explore Tech Glossary <span aria-hidden="true">&rarr;</span></a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- C. WHY CHOOSE US / VALUE PROPOSITION SECTION -->
+    <section class="section value-prop-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <h2 class="section-title">Why DevSutra?</h2>
+          <p class="section-description">Built specifically to help engineers eliminate guesswork and accelerate career growth.</p>
+        </div>
+
+        <div class="grid grid-3-col">
+          
+          <div class="card value-card">
+            <div class="value-icon">📍</div>
+            <h3 class="card-title">Structured Learning</h3>
+            <p class="card-text">No more tutorial hell. Follow clear, step-by-step A-to-Z pathways curated by senior engineers.</p>
+          </div>
+
+          <div class="card value-card">
+            <div class="value-icon">🎯</div>
+            <h3 class="card-title">Interview Ready</h3>
+            <p class="card-text">Practice top-tier, battle-tested interview questions frequently asked at tech companies.</p>
+          </div>
+
+          <div class="card value-card">
+            <div class="value-icon">🔄</div>
+            <h3 class="card-title">Up-to-Date Content</h3>
+            <p class="card-text">Always aligned with modern industry standards, frameworks, and current developer best practices.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       4. FOOTER
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      
+      <div class="grid footer-grid">
+        
+        <!-- Column 1: Brand & Mission -->
+        <div class="footer-col brand-col">
+          <a href="/" class="brand-logo footer-logo">
+            <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span class="logo-text">DevSutra</span>
+          </a>
+          <p class="footer-mission">
+            Empowering developers to master technical skills and navigate tech interviews with clarity and confidence.
+          </p>
+          <!-- Social Media Handles -->
+          <div class="social-links">
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Roadmaps Link List -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Roadmaps</h4>
+          <ul class="footer-list">
+            <li><a href="/roadmaps/frontend">Frontend Developer</a></li>
+            <li><a href="/roadmaps/backend">Backend Developer</a></li>
+            <li><a href="/roadmaps/devops">DevOps Engineer</a></li>
+            <li><a href="/roadmaps/data-science">Data Science</a></li>
+            <li><a href="/roadmaps/mobile">Mobile Development</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Interview Prep Link List -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Interview Prep</h4>
+          <ul class="footer-list">
+            <li><a href="/interview-questions">Top Interview Questions</a></li>
+            <li><a href="/glossary">Tech Glossary</a></li>
+            <li><a href="/system-design">System Design Basics</a></li>
+            <li><a href="/behavioral-prep">Behavioral Prep</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Company & Legal -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Company &amp; Legal</h4>
+          <ul class="footer-list">
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer-bottom text-center">
+        <p>&copy; 2026 DevSutra. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="/assets/js/script.js"></script>
+
 </body>
 </html>

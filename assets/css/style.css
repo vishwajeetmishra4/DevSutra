@@ -1,0 +1,803 @@
+/* ==========================================================================
+   DevSutra - Core Stylesheet
+   Palette:
+     - #EAE6DE (Cream Light Base / Text Accent)
+     - #226192 (Deep Sapphire / Primary Accent)
+     - #EF8557 (Coral Accent / Vibrant Highlights)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. COLOR VARIABLES & THEME CONFIGURATION
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand Palette Core */
+  --c-cream: #EAE6DE;
+  --c-sapphire: #226192;
+  --c-coral: #EF8557;
+
+  /* Light Theme Defaults (Glassmorphic) */
+  --bg-body: #EAE6DE;
+  --bg-gradient: radial-gradient(circle at 10% 10%, rgba(34, 97, 146, 0.12) 0%, transparent 40%),
+                 radial-gradient(circle at 90% 80%, rgba(239, 133, 87, 0.12) 0%, transparent 40%),
+                 #EAE6DE;
+  
+  --text-main: #183348;
+  --text-muted: #4b6272;
+  
+  /* Glass Surfaces */
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-bg-hover: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(34, 97, 146, 0.12);
+  --glass-border-hover: rgba(239, 133, 87, 0.4);
+  --glass-shadow: 0 8px 32px 0 rgba(34, 97, 146, 0.08);
+
+  /* Primary Interactive Elements */
+  --primary: var(--c-sapphire);
+  --primary-hover: #1b4f77;
+  --accent: var(--c-coral);
+  --accent-hover: #e06e3d;
+
+  /* Utility Specs */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+  --blur: 16px;
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+  --bg-body: #0d1b2a;
+  --bg-gradient: radial-gradient(circle at 15% 15%, rgba(34, 97, 146, 0.35) 0%, transparent 50%),
+                 radial-gradient(circle at 85% 75%, rgba(239, 133, 87, 0.25) 0%, transparent 50%),
+                 #0a1420;
+
+  --text-main: #EAE6DE;
+  --text-muted: #a0b2c6;
+
+  --glass-bg: rgba(14, 28, 44, 0.55);
+  --glass-bg-hover: rgba(20, 39, 61, 0.75);
+  --glass-border: rgba(234, 230, 222, 0.12);
+  --glass-border-hover: rgba(239, 133, 87, 0.5);
+  --glass-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.35);
+
+  --primary: var(--c-sapphire);
+  --accent: var(--c-coral);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & GLOBAL BASE STYLES
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background 0.5s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img, svg {
+  display: block;
+}
+
+/* Layout Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   3. GLASSMORPHIC COMPONENT UTILITIES
+   -------------------------------------------------------------------------- */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.glass-panel:hover {
+  border-color: var(--glass-border-hover);
+  background: var(--glass-bg-hover);
+}
+
+/* Grid Layout Systems */
+.grid {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.grid-2-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Section Common Headings */
+.section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, var(--text-main) 30%, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-description {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. BUTTONS & INTERACTIVE ELEMENTS
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(239, 133, 87, 0.35);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(239, 133, 87, 0.5);
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary);
+  color: var(--text-main);
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(34, 97, 146, 0.3);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-large {
+  padding: 1rem 2rem;
+  font-size: 1.05rem;
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent);
+  font-weight: 700;
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.btn-link:hover {
+  color: var(--primary);
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   5. HEADER & NAVIGATION BAR
+   -------------------------------------------------------------------------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  border-bottom: 1px solid var(--glass-border);
+  transition: var(--transition);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* Brand Logo */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.03em;
+}
+
+.logo-icon {
+  color: var(--accent);
+  filter: drop-shadow(0 2px 8px rgba(239, 133, 87, 0.4));
+}
+
+/* Navigation Links */
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+/* Header Actions & Search */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.85rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-box input {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  padding: 0.5rem 2.8rem 0.5rem 2.5rem;
+  font-size: 0.875rem;
+  color: var(--text-main);
+  outline: none;
+  width: 220px;
+  backdrop-filter: blur(8px);
+  transition: var(--transition);
+}
+
+.search-box input:focus {
+  width: 280px;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(239, 133, 87, 0.2);
+}
+
+.search-shortcut {
+  position: absolute;
+  right: 0.75rem;
+  background: var(--glass-border);
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+  pointer-events: none;
+}
+
+/* Light / Dark Mode Toggle */
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  padding: 0.5rem;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  background: var(--glass-bg-hover);
+  transform: rotate(15deg);
+}
+
+/* --------------------------------------------------------------------------
+   6. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding: 6rem 0 4rem 0;
+  position: relative;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-title {
+  font-size: 3.25rem;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(135deg, var(--text-main) 40%, var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 540px;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Hero Code Graphic Mockup */
+.hero-visual {
+  position: relative;
+}
+
+.code-preview-card {
+  background: #0d1b2a;
+  border: 1px solid rgba(234, 230, 222, 0.15);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transform: perspective(1000px) rotateY(-6deg) rotateX(3deg);
+  transition: var(--transition);
+}
+
+.code-preview-card:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.02);
+}
+
+.code-preview-card .card-header {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.file-title {
+  margin-left: auto;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #a0b2c6;
+}
+
+.code-preview-card .card-body {
+  padding: 1.5rem;
+  font-family: 'Fira Code', Consolas, Monaco, monospace;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: #EAE6DE;
+}
+
+.keyword { color: #EF8557; }
+.variable { color: #61afef; }
+.property { color: #98c379; }
+.string { color: #e5c07b; }
+
+/* --------------------------------------------------------------------------
+   7. CORE CONTENT - ROADMAP CARDS
+   -------------------------------------------------------------------------- */
+.roadmap-card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(34, 97, 146, 0.1);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-link {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: var(--transition);
+  margin-top: auto;
+}
+
+.card-link:hover {
+  color: var(--primary);
+  transform: translateX(4px);
+}
+
+.section-footer {
+  margin-top: 3rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. TECH INTERVIEW PREP & GLOSSARY (SPLIT LAYOUT)
+   -------------------------------------------------------------------------- */
+.interview-prep-section .split-col {
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Category Tags */
+.category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.25rem 0;
+}
+
+.tag {
+  background: rgba(34, 97, 146, 0.12);
+  border: 1px solid var(--glass-border);
+  color: var(--primary);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+}
+
+[data-theme="dark"] .tag {
+  color: var(--c-cream);
+}
+
+/* Featured Sample Question Card */
+.sample-question-card {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--glass-border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.question-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.question-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.question-preview {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* Glossary Pills Grid */
+.glossary-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.75rem 0;
+}
+
+.pill {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-main);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.pill:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(239, 133, 87, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   9. VALUE PROPOSITION SECTION
+   -------------------------------------------------------------------------- */
+.value-card {
+  padding: 2.25rem;
+  text-align: center;
+}
+
+.value-icon {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: rgba(239, 133, 87, 0.1);
+  border-radius: 50%;
+  border: 1px solid rgba(239, 133, 87, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   10. FOOTER
+   -------------------------------------------------------------------------- */
+.footer {
+  background: rgba(13, 27, 42, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--glass-border);
+  color: #EAE6DE;
+  padding: 4rem 0 2rem 0;
+  margin-top: 4rem;
+}
+
+.footer-grid {
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-logo {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.footer-mission {
+  color: #a0b2c6;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 300px;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: #a0b2c6;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  color: var(--accent);
+  background: rgba(239, 133, 87, 0.15);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.footer-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+}
+
+.footer-list li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-list a {
+  color: #a0b2c6;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.footer-list a:hover {
+  color: var(--accent);
+  padding-left: 4px;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #6b8296;
+  font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   11. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .code-preview-card {
+    transform: none;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .grid-3-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .grid-2-col,
+  .grid-3-col {
+    grid-template-columns: 1fr;
+  }
+
+  .search-box input {
+    width: 140px;
+  }
+
+  .search-box input:focus {
+    width: 180px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
