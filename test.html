@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DevSutra Roadmaps - Step-by-step Role-based and Skill-based career learning paths from zero to mastery." />
+  <title>Developer Roadmaps - DevSutra</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/roadmap.css" />
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. HEADER (SHARED WITH HOMEPAGE)
+       ========================================================================= -->
+  <header class="header">
+    <div class="container header-container">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="DevSutra Home">
+        <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        <span class="logo-text">DevSutra</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="roadmaps.html" class="nav-link active">Roadmaps</a>
+          </li>
+          <li class="nav-item">
+            <a href="index.html#interview-prep" class="nav-link">Interview Prep</a>
+          </li>
+          <li class="nav-item">
+            <a href="#community" class="nav-link">Community / Blog</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- Search Input -->
+        <div class="search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="search" id="site-search" placeholder="Search roadmaps, skills..." aria-label="Search content" />
+          <kbd class="search-shortcut">Ctrl K</kbd>
+        </div>
+
+        <!-- Light / Dark Theme Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+
+        <!-- CTA Button -->
+        <a href="#role-roadmaps" class="btn btn-primary">Browse Paths</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. ROADMAP SUBPAGE HERO SECTION
+       ========================================================================= -->
+  <section class="hero-section">
+    <div class="container hero-container">
+      
+      <div class="hero-content">
+        <h1 class="hero-title">Structured Learning Paths from Zero to Mastery.</h1>
+        <p class="hero-subtitle">
+          Here you will have a dedicated roadmap for the exact Role and Skills you want to gain. Eliminate tutorial hell with clear, step-by-step developer milestones.
+        </p>
+
+        <!-- Quick Jump Filter Buttons -->
+        <div class="hero-cta-group">
+          <a href="#role-roadmaps" class="btn btn-primary btn-large">Role-Based Paths</a>
+          <a href="#skill-roadmaps" class="btn btn-outline btn-large">Skill-Based Paths</a>
+        </div>
+
+        <div class="hero-trust-badge">
+          <span class="trust-text">Updated for 2026 industry standards and tech stacks.</span>
+        </div>
+      </div>
+
+      <!-- Roadmap Zero to Master Visual Card -->
+      <!-- <div class="hero-visual">
+        <div class="code-preview-card roadmap-preview-card">
+          <div class="card-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="file-title">learning_path_tree.json</span>
+          </div>
+          <div class="card-body roadmap-tree-body">
+            <div class="tree-node start-node">
+              <span class="node-badge">STEP 01</span>
+              <span class="node-title">Foundations &amp; Basics</span>
+            </div>
+            <div class="tree-connector"></div>
+            <div class="tree-node mid-node">
+              <span class="node-badge">STEP 02</span>
+              <span class="node-title">Core Architecture &amp; Projects</span>
+            </div>
+            <div class="tree-connector"></div>
+            <div class="tree-node end-node">
+              <span class="node-badge">STEP 03</span>
+              <span class="node-title">Advanced Mastery &amp; System Scaling</span>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Roadmap Zero to Expert Zigzag Path Visual -->
+      <div class="hero-visual">
+        <div class="zigzag-card">
+          <div class="zigzag-header">
+            <div class="dot-group">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="zigzag-card-title">DEV_MASTERY_ROADMAP.SVG</span>
+            <span class="badge-live">LIVE PATH</span>
+          </div>
+
+          <div class="zigzag-body">
+            <svg class="roadmap-svg" viewBox="0 0 540 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Line Gradient -->
+                <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#EF8557"/>
+                  <stop offset="50%" stop-color="#38bdf8"/>
+                  <stop offset="100%" stop-color="#22c55e"/>
+                </linearGradient>
+
+                <!-- Glow Filters -->
+                <filter id="glow-start" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="6" result="blur"/>
+                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+                <filter id="glow-end" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="8" result="blur"/>
+                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+
+                <!-- Pulsing CSS inside SVG -->
+                <style>
+                  .pulse-ring {
+                    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+                    transform-origin: center;
+                  }
+                  @keyframes pulse {
+                    0% { r: 18px; opacity: 0.8; }
+                    100% { r: 32px; opacity: 0; }
+                  }
+                  .dash-line {
+                    stroke-dasharray: 8 6;
+                    animation: dashMove 20s linear infinite;
+                  }
+                  @keyframes dashMove {
+                    to { stroke-dashoffset: -100; }
+                  }
+                </style>
+              </defs>
+
+              <!-- Main Zigzag Path Track (Background) -->
+              <path class="zigzag-track-bg" d="M 80,60 H 460 C 490,60 490,160 460,160 H 80 C 50,160 50,260 80,260 H 460" 
+                    stroke="rgba(255, 255, 255, 0.1)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <!-- Animated Gradient Path -->
+              <path class="zigzag-track dash-line" d="M 80,60 H 460 C 490,60 490,160 460,160 H 80 C 50,160 50,260 80,260 H 460" 
+                    stroke="url(#pathGradient)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <!-- INTERMEDIATE DOTS (MILSTONES) -->
+              <!-- Point 1 (Step 1) -->
+              <g class="node-group">
+                <circle cx="210" cy="60" r="7" fill="#1e293b" stroke="#EF8557" stroke-width="3"/>
+                <circle cx="210" cy="60" r="3" fill="#EF8557"/>
+                <text x="210" y="38" text-anchor="middle" class="svg-node-text">HTML/CSS</text>
+              </g>
+
+              <!-- Point 2 (Step 2) -->
+              <g class="node-group">
+                <circle cx="340" cy="60" r="7" fill="#1e293b" stroke="#EF8557" stroke-width="3"/>
+                <circle cx="340" cy="60" r="3" fill="#EF8557"/>
+                <text x="340" y="38" text-anchor="middle" class="svg-node-text">JavaScript</text>
+              </g>
+
+              <!-- Point 3 (Corner turn) -->
+              <g class="node-group">
+                <circle cx="360" cy="160" r="7" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+                <circle cx="360" cy="160" r="3" fill="#38bdf8"/>
+                <text x="360" y="190" text-anchor="middle" class="svg-node-text">React & Frameworks</text>
+              </g>
+
+              <!-- Point 4 (Mid Way) -->
+              <g class="node-group">
+                <circle cx="210" cy="160" r="7" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+                <circle cx="210" cy="160" r="3" fill="#38bdf8"/>
+                <text x="210" y="190" text-anchor="middle" class="svg-node-text">Backend & APIs</text>
+              </g>
+
+              <!-- Point 5 (Step 5) -->
+              <g class="node-group">
+                <circle cx="210" cy="260" r="7" fill="#1e293b" stroke="#22c55e" stroke-width="3"/>
+                <circle cx="210" cy="260" r="3" fill="#22c55e"/>
+                <text x="210" y="292" text-anchor="middle" class="svg-node-text">System Design</text>
+              </g>
+
+              <!-- Point 6 (Step 6) -->
+              <g class="node-group">
+                <circle cx="340" cy="260" r="7" fill="#1e293b" stroke="#22c55e" stroke-width="3"/>
+                <circle cx="340" cy="260" r="3" fill="#22c55e"/>
+                <text x="340" y="292" text-anchor="middle" class="svg-node-text">Cloud & DevOps</text>
+              </g>
+
+              <!-- ========================================== -->
+              <!-- STARTING POINT ("ZERO") -->
+              <!-- ========================================== -->
+              <g class="start-point" filter="url(#glow-start)">
+                <circle cx="80" cy="60" r="20" class="pulse-ring" fill="none" stroke="#EF8557" stroke-width="2"/>
+                <circle cx="80" cy="60" r="16" fill="#EF8557"/>
+                <circle cx="80" cy="60" r="12" fill="#0f172a" stroke="#ffffff" stroke-width="2"/>
+              </g>
+              <!-- ZERO Label Card -->
+              <g transform="translate(80, 108)">
+                <rect x="-42" y="-14" width="84" height="28" rx="14" fill="#EF8557"/>
+                <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-weight="900" font-size="12" letter-spacing="1">ZERO</text>
+              </g>
+
+              <!-- ========================================== -->
+              <!-- END POINT ("EXPERT") -->
+              <!-- ========================================== -->
+              <g class="end-point" filter="url(#glow-end)">
+                <circle cx="460" cy="260" r="22" class="pulse-ring" fill="none" stroke="#22c55e" stroke-width="2"/>
+                <circle cx="460" cy="260" r="18" fill="#22c55e"/>
+                <circle cx="460" cy="260" r="13" fill="#0f172a" stroke="#ffffff" stroke-width="2.5"/>
+                <!-- Star Icon inside Expert node -->
+                <path d="M460,253 L462,258 L467,258 L463,261 L465,266 L460,263 L455,266 L457,261 L453,258 L458,258 Z" fill="#22c55e"/>
+              </g>
+              <!-- EXPERT Label Card -->
+              <g transform="translate(460, 310)">
+                <rect x="-48" y="-14" width="96" height="28" rx="14" fill="#22c55e"/>
+                <text x="0" y="4" text-anchor="middle" fill="#0f172a" font-weight="900" font-size="12" letter-spacing="1">EXPERT</text>
+              </g>
+
+            </svg>
+          </div>
+
+          <!-- Bottom Status Banner -->
+          <div class="zigzag-footer">
+            <span class="status-indicator"></span>
+            <span class="footer-text">Continuous Progression • Interactive Mastery Path</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. MAIN ROADMAP CONTENT
+       ========================================================================= -->
+  <main id="main-content">
+
+    <!-- A. ROLE-BASED ROADMAPS SECTION -->
+    <section id="role-roadmaps" class="section roadmaps-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <h2 class="section-title">Role-Based Roadmaps</h2>
+          <p class="section-description">End-to-end career roadmaps designed to take you step-by-step into high-demand engineering roles.</p>
+        </div>
+
+        <div class="grid grid-3-col">
+          
+          <!-- Role Card 1: Frontend -->
+          <article class="card roadmap-card">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="card-title">Frontend Developer</h3>
+            <p class="card-text">Step-by-step path covering HTML, CSS, JavaScript, React, Next.js, and web performance.</p>
+            <div class="card-tags">
+              <span class="card-tag">HTML/CSS</span>
+              <span class="card-tag">React</span>
+              <span class="card-tag">TypeScript</span>
+            </div>
+            <a href="/roadmaps/frontend" class="card-link">
+              View Detailed Path <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+          <!-- Role Card 2: Backend -->
+          <article class="card roadmap-card">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
+            </div>
+            <h3 class="card-title">Backend Developer</h3>
+            <p class="card-text">APIs, Node.js/Python, Microservices, System Architecture, and SQL/NoSQL databases.</p>
+            <div class="card-tags">
+              <span class="card-tag">APIs</span>
+              <span class="card-tag">Node.js</span>
+              <span class="card-tag">PostgreSQL</span>
+            </div>
+            <a href="/roadmaps/backend" class="card-link">
+              View Detailed Path <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+          <!-- Role Card 3: DevOps -->
+          <article class="card roadmap-card">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12A10 10 0 1 0 12 22 10 10 0 0 0 22 12z"></path>
+                <path d="M12 2a10 10 0 0 1 10 10"></path>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+            </div>
+            <h3 class="card-title">DevOps Engineer</h3>
+            <p class="card-text">CI/CD pipelines, Docker, Kubernetes, Cloud (AWS/GCP), and Infrastructure as Code.</p>
+            <div class="card-tags">
+              <span class="card-tag">Docker</span>
+              <span class="card-tag">AWS</span>
+              <span class="card-tag">Kubernetes</span>
+            </div>
+            <a href="/roadmaps/devops" class="card-link">
+              View Detailed Path <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+          <!-- Role Card 4: Full Stack -->
+          <article class="card roadmap-card">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="card-title">Full Stack Developer</h3>
+            <p class="card-text">Combine client and server mastery to build end-to-end scalable web applications.</p>
+            <div class="card-tags">
+              <span class="card-tag">Next.js</span>
+              <span class="card-tag">GraphQL</span>
+              <span class="card-tag">Prisma</span>
+            </div>
+            <a href="/roadmaps/fullstack" class="card-link">
+              View Detailed Path <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+          <!-- Role Card 5: Data Scientist -->
+          <article class="card roadmap-card">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h3 class="card-title">Data Scientist</h3>
+            <p class="card-text">Statistics, Python, data analysis, machine learning pipelines, and visualization.</p>
+            <div class="card-tags">
+              <span class="card-tag">Python</span>
+              <span class="card-tag">Pandas</span>
+              <span class="card-tag">Scikit-Learn</span>
+            </div>
+            <a href="/roadmaps/data-science" class="card-link">
+              View Detailed Path <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+          <!-- Role Card 6: AI / ML Engineer -->
+          <article class="card roadmap-card">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </div>
+            <h3 class="card-title">AI / ML Engineer</h3>
+            <p class="card-text">Deep neural networks, PyTorch, Large Language Models (LLMs), NLP, and model deployment.</p>
+            <div class="card-tags">
+              <span class="card-tag">PyTorch</span>
+              <span class="card-tag">LLMs</span>
+              <span class="card-tag">Transformers</span>
+            </div>
+            <a href="/roadmaps/ai-ml" class="card-link">
+              View Detailed Path <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+        </div>
+
+        <div class="section-footer text-center">
+          <a href="#roadmaps" class="btn btn-secondary">Explore More Roles</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- B. SKILL-BASED ROADMAPS SECTION -->
+    <section id="skill-roadmaps" class="section roadmaps-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <h2 class="section-title">Skill-Based Roadmaps</h2>
+          <p class="section-description">Targeted learning paths focused on mastering specific frameworks, databases, and core technical skills.</p>
+        </div>
+
+        <div class="grid grid-3-col">
+          
+          <!-- Skill Card 1: System Design -->
+          <article class="card roadmap-card">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="8" rx="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2"></rect>
+              </svg>
+            </div>
+            <h3 class="card-title">System Design</h3>
+            <p class="card-text">Master distributed systems, caching, message queues, load balancing, and database sharding.</p>
+            <div class="card-tags">
+              <span class="card-tag">Scalability</span>
+              <span class="card-tag">Redis</span>
+              <span class="card-tag">Kafka</span>
+            </div>
+            <a href="/roadmaps/system-design" class="card-link">
+              View Skill Roadmap <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+          <!-- Skill Card 2: React & Next.js -->
+          <article class="card roadmap-card">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(30 12 12)"></ellipse>
+                <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(90 12 12)"></ellipse>
+                <ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(150 12 12)"></ellipse>
+              </svg>
+            </div>
+            <h3 class="card-title">React &amp; Next.js</h3>
+            <p class="card-text">From JSX fundamentals and hooks to Server Components, App Router, and SSR optimization.</p>
+            <div class="card-tags">
+              <span class="card-tag">React 19</span>
+              <span class="card-tag">App Router</span>
+              <span class="card-tag">SSR</span>
+            </div>
+            <a href="/roadmaps/react-nextjs" class="card-link">
+              View Skill Roadmap <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+          <!-- Skill Card 3: PostgreSQL & SQL -->
+          <article class="card roadmap-card">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </div>
+            <h3 class="card-title">PostgreSQL &amp; SQL Mastery</h3>
+            <p class="card-text">Indexing, execution plans, ACID transactions, complex joins, and relational data modeling.</p>
+            <div class="card-tags">
+              <span class="card-tag">SQL</span>
+              <span class="card-tag">Indexing</span>
+              <span class="card-tag">Optimization</span>
+            </div>
+            <a href="/roadmaps/postgresql" class="card-link">
+              View Skill Roadmap <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+          <!-- Skill Card 4: Docker & Containers -->
+          <article class="card roadmap-card">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="card-title">Docker &amp; Containers</h3>
+            <p class="card-text">Containerization, Dockerfiles, Docker Compose, networking, volumes, and multi-stage builds.</p>
+            <div class="card-tags">
+              <span class="card-tag">Containers</span>
+              <span class="card-tag">Compose</span>
+              <span class="card-tag">DevOps</span>
+            </div>
+            <a href="/roadmaps/docker" class="card-link">
+              View Skill Roadmap <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+          <!-- Skill Card 5: Python Engineering -->
+          <article class="card roadmap-card">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <h3 class="card-title">Python Engineering</h3>
+            <p class="card-text">OOP, async/await, FastAPI, web scraping, testing, and production application patterns.</p>
+            <div class="card-tags">
+              <span class="card-tag">FastAPI</span>
+              <span class="card-tag">AsyncIO</span>
+              <span class="card-tag">PyTest</span>
+            </div>
+            <a href="/roadmaps/python" class="card-link">
+              View Skill Roadmap <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+          <!-- Skill Card 6: Git & Version Control -->
+          <article class="card roadmap-card">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="18" r="3"></circle>
+                <circle cx="6" cy="6" r="3"></circle>
+                <circle cx="6" cy="18" r="3"></circle>
+                <line x1="6" y1="9" x2="6" y2="15"></line>
+                <path d="M18 15V9a6 6 0 0 0-6-6H6"></path>
+              </svg>
+            </div>
+            <h3 class="card-title">Git &amp; Version Control</h3>
+            <p class="card-text">Branching strategies, interactive rebase, cherry-pick, conflict resolution, and PR workflows.</p>
+            <div class="card-tags">
+              <span class="card-tag">Git CLI</span>
+              <span class="card-tag">Rebase</span>
+              <span class="card-tag">GitHub</span>
+            </div>
+            <a href="/roadmaps/git" class="card-link">
+              View Skill Roadmap <span aria-hidden="true">&rarr;</span>
+            </a>
+          </article>
+
+        </div>
+
+        <div class="section-footer text-center">
+          <a href="#roadmaps" class="btn btn-secondary">Explore More Skills</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       4. FOOTER (SHARED WITH HOMEPAGE)
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      
+      <div class="grid footer-grid">
+        
+        <!-- Column 1: Brand -->
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            <span class="logo-text">DevSutra</span>
+          </a>
+          <p class="footer-mission">
+            Empowering developers to master technical skills and navigate tech interviews with clarity and confidence.
+          </p>
+          <div class="social-links">
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Roadmaps -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Roadmaps</h4>
+          <ul class="footer-list">
+            <li><a href="/roadmaps/frontend">Frontend Developer</a></li>
+            <li><a href="/roadmaps/backend">Backend Developer</a></li>
+            <li><a href="/roadmaps/devops">DevOps Engineer</a></li>
+            <li><a href="/roadmaps/data-science">Data Science</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Interview Prep -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Interview Prep</h4>
+          <ul class="footer-list">
+            <li><a href="/interview-questions">Top Interview Questions</a></li>
+            <li><a href="/glossary">Tech Glossary</a></li>
+            <li><a href="/system-design">System Design Basics</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Legal -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Company &amp; Legal</h4>
+          <ul class="footer-list">
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom text-center">
+        <p>&copy; 2026 DevSutra. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
