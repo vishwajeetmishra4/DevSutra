@@ -204,4 +204,88 @@ function initHeaderScrollEffect() {
   });
 }
 
+// ==========================================================================
+// Explore More Roles Handler (Loads 6 cards per click)
+// ==========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const exploreBtn = document.getElementById("explore-more-roles-btn");
+  const noMoreMsg = document.getElementById("no-more-roles-msg");
 
+  if (exploreBtn) {
+    exploreBtn.addEventListener("click", () => {
+      // Find all hidden role cards
+      const hiddenCards = document.querySelectorAll("#role-cards-grid .roadmap-card.hidden-card");
+      
+      // Reveal up to 6 cards per click
+      const batchSize = 6;
+      let count = 0;
+
+      hiddenCards.forEach((card) => {
+        if (count < batchSize) {
+          card.classList.remove("hidden-card");
+          card.classList.add("fade-in"); // Apply subtle entrance animation
+          count++;
+        }
+      });
+
+      // Check remaining hidden cards after reveal
+      const remainingHidden = document.querySelectorAll("#role-cards-grid .roadmap-card.hidden-card");
+
+      // If no more hidden cards exist, replace button with end message
+      if (remainingHidden.length === 0) {
+        exploreBtn.style.display = "none";
+        if (noMoreMsg) {
+          noMoreMsg.classList.remove("hidden-card");
+        }
+      }
+    });
+  }
+});
+
+
+// ==========================================================================
+// Explore More Handlers (Loads 6 cards per click for Roles & Skills)
+// ==========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+  
+  // Generic function to initialize explore buttons
+  function setupExploreMore(buttonId, msgId, gridId) {
+    const exploreBtn = document.getElementById(buttonId);
+    const noMoreMsg = document.getElementById(msgId);
+
+    if (exploreBtn) {
+      exploreBtn.addEventListener("click", () => {
+        // Find all hidden cards in the target grid
+        const hiddenCards = document.querySelectorAll(`#${gridId} .roadmap-card.hidden-card`);
+        
+        // Reveal up to 6 cards per click
+        const batchSize = 6;
+        let count = 0;
+
+        hiddenCards.forEach((card) => {
+          if (count < batchSize) {
+            card.classList.remove("hidden-card");
+            card.classList.add("fade-in"); // Apply subtle entrance animation
+            count++;
+          }
+        });
+
+        // Check remaining hidden cards in target grid
+        const remainingHidden = document.querySelectorAll(`#${gridId} .roadmap-card.hidden-card`);
+
+        // If no more hidden cards exist, hide button and show completion message
+        if (remainingHidden.length === 0) {
+          exploreBtn.style.display = "none";
+          if (noMoreMsg) {
+            noMoreMsg.classList.remove("hidden-card");
+          }
+        }
+      });
+    }
+  }
+
+  // Initialize both Role-Based and Skill-Based sections
+  setupExploreMore("explore-more-roles-btn", "no-more-roles-msg", "role-cards-grid");
+  setupExploreMore("explore-more-skills-btn", "no-more-skills-msg", "skill-cards-grid");
+  
+});
