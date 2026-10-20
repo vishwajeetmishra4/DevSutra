@@ -84,30 +84,147 @@
         </div>
       </div>
 
-      <!-- Roadmap Zero to Master Visual Card -->
+      <!-- Roadmap Zero to Expert Zigzag Path Visual -->
       <div class="hero-visual">
-        <div class="code-preview-card roadmap-preview-card">
-          <div class="card-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-            <span class="file-title">learning_path_tree.json</span>
+        <div class="zigzag-card">
+          <div class="zigzag-header">
+            <div class="dot-group">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="zigzag-card-title">DEV_MASTERY_ROADMAP.SVG</span>
+            <span class="badge-live">LIVE PATH</span>
           </div>
-          <div class="card-body roadmap-tree-body">
-            <div class="tree-node start-node">
-              <span class="node-badge">STEP 01</span>
-              <span class="node-title">Foundations &amp; Basics</span>
-            </div>
-            <div class="tree-connector"></div>
-            <div class="tree-node mid-node">
-              <span class="node-badge">STEP 02</span>
-              <span class="node-title">Core Architecture &amp; Projects</span>
-            </div>
-            <div class="tree-connector"></div>
-            <div class="tree-node end-node">
-              <span class="node-badge">STEP 03</span>
-              <span class="node-title">Advanced Mastery &amp; System Scaling</span>
-            </div>
+
+          <div class="zigzag-body">
+            <svg class="roadmap-svg" viewBox="0 0 540 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Line Gradient -->
+                <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#EF8557"/>
+                  <stop offset="50%" stop-color="#38bdf8"/>
+                  <stop offset="100%" stop-color="#22c55e"/>
+                </linearGradient>
+
+                <!-- Glow Filters -->
+                <filter id="glow-start" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="6" result="blur"/>
+                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+                <filter id="glow-end" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="8" result="blur"/>
+                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+
+                <!-- Pulsing CSS inside SVG -->
+                <style>
+                  .pulse-ring {
+                    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+                    transform-origin: center;
+                  }
+                  @keyframes pulse {
+                    0% { r: 18px; opacity: 0.8; }
+                    100% { r: 32px; opacity: 0; }
+                  }
+                  .dash-line {
+                    stroke-dasharray: 8 6;
+                    animation: dashMove 20s linear infinite;
+                  }
+                  @keyframes dashMove {
+                    to { stroke-dashoffset: -100; }
+                  }
+                </style>
+              </defs>
+
+              <!-- Main Zigzag Path Track (Background) -->
+              <path class="zigzag-track-bg" d="M 80,60 H 460 C 490,60 490,160 460,160 H 80 C 50,160 50,260 80,260 H 460" 
+                    stroke="rgba(255, 255, 255, 0.1)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <!-- Animated Gradient Path -->
+              <path class="zigzag-track dash-line" d="M 80,60 H 460 C 490,60 490,160 460,160 H 80 C 50,160 50,260 80,260 H 460" 
+                    stroke="url(#pathGradient)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <!-- INTERMEDIATE DOTS (MILSTONES) -->
+              <!-- Point 1 (Step 1) -->
+              <g class="node-group">
+                <circle cx="210" cy="60" r="7" fill="#1e293b" stroke="#EF8557" stroke-width="3"/>
+                <circle cx="210" cy="60" r="3" fill="#EF8557"/>
+                <text x="210" y="38" text-anchor="middle" class="svg-node-text">HTML/CSS</text>
+              </g>
+
+              <!-- Point 2 (Step 2) -->
+              <g class="node-group">
+                <circle cx="340" cy="60" r="7" fill="#1e293b" stroke="#EF8557" stroke-width="3"/>
+                <circle cx="340" cy="60" r="3" fill="#EF8557"/>
+                <text x="340" y="38" text-anchor="middle" class="svg-node-text">JavaScript</text>
+              </g>
+
+              <!-- Point 3 (Corner turn) -->
+              <g class="node-group">
+                <circle cx="360" cy="160" r="7" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+                <circle cx="360" cy="160" r="3" fill="#38bdf8"/>
+                <text x="360" y="190" text-anchor="middle" class="svg-node-text">React & Frameworks</text>
+              </g>
+
+              <!-- Point 4 (Mid Way) -->
+              <g class="node-group">
+                <circle cx="210" cy="160" r="7" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+                <circle cx="210" cy="160" r="3" fill="#38bdf8"/>
+                <text x="210" y="190" text-anchor="middle" class="svg-node-text">Backend & APIs</text>
+              </g>
+
+              <!-- Point 5 (Step 5) -->
+              <g class="node-group">
+                <circle cx="210" cy="260" r="7" fill="#1e293b" stroke="#22c55e" stroke-width="3"/>
+                <circle cx="210" cy="260" r="3" fill="#22c55e"/>
+                <text x="210" y="292" text-anchor="middle" class="svg-node-text">System Design</text>
+              </g>
+
+              <!-- Point 6 (Step 6) -->
+              <g class="node-group">
+                <circle cx="340" cy="260" r="7" fill="#1e293b" stroke="#22c55e" stroke-width="3"/>
+                <circle cx="340" cy="260" r="3" fill="#22c55e"/>
+                <text x="340" y="292" text-anchor="middle" class="svg-node-text">Cloud & DevOps</text>
+              </g>
+
+              <!-- ========================================== -->
+              <!-- STARTING POINT ("ZERO") -->
+              <!-- ========================================== -->
+              <g class="start-point" filter="url(#glow-start)">
+                <circle cx="80" cy="60" r="20" class="pulse-ring" fill="none" stroke="#EF8557" stroke-width="2"/>
+                <circle cx="80" cy="60" r="16" fill="#EF8557"/>
+                <circle cx="80" cy="60" r="12" fill="#0f172a" stroke="#ffffff" stroke-width="2"/>
+              </g>
+              <!-- ZERO Label Card -->
+              <g transform="translate(80, 108)">
+                <rect x="-42" y="-14" width="84" height="28" rx="14" fill="#EF8557"/>
+                <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-weight="900" font-size="12" letter-spacing="1">ZERO</text>
+              </g>
+
+              <!-- ========================================== -->
+              <!-- END POINT ("EXPERT") -->
+              <!-- ========================================== -->
+              <g class="end-point" filter="url(#glow-end)">
+                <circle cx="460" cy="260" r="22" class="pulse-ring" fill="none" stroke="#22c55e" stroke-width="2"/>
+                <circle cx="460" cy="260" r="18" fill="#22c55e"/>
+                <circle cx="460" cy="260" r="13" fill="#0f172a" stroke="#ffffff" stroke-width="2.5"/>
+                <!-- Star Icon inside Expert node -->
+                <path d="M460,253 L462,258 L467,258 L463,261 L465,266 L460,263 L455,266 L457,261 L453,258 L458,258 Z" fill="#22c55e"/>
+              </g>
+              <!-- EXPERT Label Card -->
+              <g transform="translate(460, 310)">
+                <rect x="-48" y="-14" width="96" height="28" rx="14" fill="#22c55e"/>
+                <text x="0" y="4" text-anchor="middle" fill="#0f172a" font-weight="900" font-size="12" letter-spacing="1">EXPERT</text>
+              </g>
+
+            </svg>
+          </div>
+
+          <!-- Bottom Status Banner -->
+          <div class="zigzag-footer">
+            <span class="status-indicator"></span>
+            <span class="footer-text">Continuous Progression • Interactive Mastery Path</span>
           </div>
         </div>
       </div>
