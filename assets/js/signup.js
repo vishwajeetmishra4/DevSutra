@@ -208,7 +208,7 @@ document.getElementById("verifyOtpBtn").addEventListener("click", () => {
 
     setTimeout(() => {
       localStorage.setItem("devsutra-authenticated", "true");
-      window.location.href = "index.html";
+      window.location.href = "/index.html";
     }, 1200);
   });
 
