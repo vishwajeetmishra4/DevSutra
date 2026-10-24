@@ -1134,3 +1134,69 @@ img, svg {
     display: none; /* Hide Log In outline button on smaller screens, keep Sign Up primary CTA */
   }
 }
+
+
+
+/* Testing Only  */
+
+/* ==========================================================================
+   Header User Profile Badge
+   ========================================================================== */
+.user-profile-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--card-bg, rgba(255, 255, 255, 0.8));
+  border: 1.5px solid var(--border-color, rgba(34, 97, 146, 0.2));
+  padding: 0.3rem 0.75rem 0.3rem 0.35rem;
+  border-radius: 50px;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .user-profile-badge {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(234, 230, 222, 0.2);
+}
+
+.user-avatar {
+  width: 28px;
+  height: 28px;
+  background: var(--accent, #EF8557);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main, #0f172a);
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+[data-theme="dark"] .user-name {
+  color: #EAE6DE;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted, #64748b);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.logout-btn:hover {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}

@@ -45,14 +45,35 @@ document.addEventListener("DOMContentLoaded", () => {
       setButtonLoading(submitBtn, "Logging in...");
 
       // Simulate Authentication API Call
+    //   setTimeout(() => {
+    //     if (remember) {
+    //       localStorage.setItem("devsutra-user-email", email);
+    //     }
+        
+    //     console.log("Logged in with Email:", { email, remember });
+    //     window.location.href = "../../index.html";
+    //   }, 1000);
+
+      // Simulate Authentication API Call
       setTimeout(() => {
         if (remember) {
           localStorage.setItem("devsutra-user-email", email);
         }
         
+        // ------------------------------------------------------------------
+        // ADD HERE: Extract user name & set authentication session tokens
+        // ------------------------------------------------------------------
+        const extractedName = email.split('@')[0]; // Extract name before @ symbol
+        const formattedName = extractedName.charAt(0).toUpperCase() + extractedName.slice(1);
+
+        localStorage.setItem("devsutra-authenticated", "true");
+        localStorage.setItem("devsutra-username", formattedName);
+        // ------------------------------------------------------------------
+
         console.log("Logged in with Email:", { email, remember });
         window.location.href = "../../index.html";
       }, 1000);
+      
     });
   }
 

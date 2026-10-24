@@ -206,11 +206,25 @@ document.getElementById("verifyOtpBtn").addEventListener("click", () => {
     verifyBtn.disabled = true;
     verifyBtn.textContent = "Creating Account...";
 
-    setTimeout(() => {
-      localStorage.setItem("devsutra-authenticated", "true");
-      window.location.href = "../../index.html";
-    }, 1200);
-  });
+    // setTimeout(() => {
+    //   localStorage.setItem("devsutra-authenticated", "true");
+    //   window.location.href = "../../index.html";
+    // }, 1200);
 
+    setTimeout(() => {
+        // ------------------------------------------------------------------
+        // SAVE USER SESSION & USERNAME FOR HEADER BADGE
+        // ------------------------------------------------------------------
+        const fullNameInput = document.getElementById("fullName");
+        const fullName = fullNameInput ? fullNameInput.value.trim() : "";
+        const firstName = fullName ? fullName.split(' ')[0] : 'Developer';
+
+        localStorage.setItem("devsutra-authenticated", "true");
+        localStorage.setItem("devsutra-username", firstName);
+        // ------------------------------------------------------------------
+
+        window.location.href = "../../index.html";
+      }, 1200);
+    });
 
 });

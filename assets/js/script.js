@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAccordions();
   initGlossaryInteractivity();
   initHeaderScrollEffect();
+  initHeaderAuthStatus();
 });
 
 /* ==========================================================================
@@ -289,3 +290,43 @@ document.addEventListener("DOMContentLoaded", () => {
   setupExploreMore("explore-more-skills-btn", "no-more-skills-msg", "skill-cards-grid");
   
 });
+
+
+
+// Add to the top inside document.addEventListener('DOMContentLoaded', () => { ... })
+initHeaderAuthStatus();
+
+/* ==========================================================================
+   HEADER AUTHENTICATION STATUS & PROFILE BADGE
+   ========================================================================== */
+function initHeaderAuthStatus() {
+  const headerAuth = document.querySelector('.header-auth');
+  if (!headerAuth) return;
+
+  const isAuthenticated = localStorage.getItem('devsutra-authenticated') === 'true';
+  const username = localStorage.getItem('devsutra-username') || 'Developer';
+
+  if (isAuthenticated) {
+    headerAuth.innerHTML = `
+      <div class="user-profile-badge">
+        <div class="user-avatar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+        <span class="user-name">${username}</span>
+        <button id="logoutBtn" class="logout-btn" title="Log Out" aria-label="Log Out">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        </button>
+      </div>
+    `;
+
+    // Handle Logout action
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', () => {
+        localStorage.removeItem('devsutra-authenticated');
+        localStorage.removeItem('devsutra-username');
+        window.location.reload(); // Refresh page to restore Login/Sign Up buttons
+      });
+    }
+  }
+}
