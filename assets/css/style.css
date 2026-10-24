@@ -1094,3 +1094,19 @@ img, svg {
     padding: 1.5rem !important;
   }
 }
+
+
+
+@media (max-width: 1024px) {
+  .nav-menu {
+    overflow-x: auto;
+    max-width: 450px;
+    scrollbar-width: none; /* Hide scrollbar for clean look */
+  }
+  .nav-menu::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-list {
+    white-space: nowrap; /* Keep items in a single row that you can swipe/scroll */
+  }
+}
