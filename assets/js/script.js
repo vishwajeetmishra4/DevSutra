@@ -314,7 +314,7 @@ function initHeaderAuthStatus() {
       // ON OTHER PAGES: Show full profile badge linked to Dashboard
       headerAuth.innerHTML = `
         <div class="user-profile-badge">
-          <a href="../user/dashboard.html" class="user-badge-link" title="Go to Dashboard">
+          <a href="./pages/user/dashboard.html" class="user-badge-link" title="Go to Dashboard">
             <div class="user-avatar">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             </div>
