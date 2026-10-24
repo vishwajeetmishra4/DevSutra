@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DevSutra Roadmaps - Step-by-step Role-based and Skill-based career learning paths from zero to mastery." />
-  <title>Developer Roadmaps - DevSutra</title>
-  <link rel="stylesheet" href="../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../assets/css/roadmap.css" />
+
+  <meta name="description" content="DevSutra - Master Tech Skills & Land Your Dream Job with Confidence. Step-by-step career roadmaps, real-world interview questions, and essential tech terminologies." />
+  <title>DevSutra - Tech Career & Skill-Mastery Platform</title>
+  <link rel="stylesheet" href="assets/css/style.css?v=3" />
 </head>
 <body>
 
   <!-- =========================================================================
-       1. HEADER (SHARED WITH HOMEPAGE)
+       1. HEADER (NAVIGATION BAR)
        ========================================================================= -->
   <header class="header">
     <div class="container header-container">
       
       <!-- Brand Logo -->
-      <a href="index.html" class="brand-logo" aria-label="DevSutra Home">
+      <a href="/" class="brand-logo" aria-label="DevSutra Home">
         <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="16 18 22 12 16 6"></polyline>
           <polyline points="8 6 2 12 8 18"></polyline>
@@ -25,15 +25,37 @@
         <span class="logo-text">DevSutra</span>
       </a>
 
+    
+  <!-- <a href="/" class="brand-logo" aria-label="DevSutra Home">
+    <img src="assets/images/DevSutraLogo.png" alt="DevSutra Logo" class="logo-img" />
+
+  </a> -->
+
       <!-- Navigation Links -->
       <nav class="nav-menu" aria-label="Main Navigation">
         <ul class="nav-list">
           <li class="nav-item">
-            <a href="roadmaps.html" class="nav-link active">Roadmaps</a>
+            <a href="#roadmaps" class="nav-link">
+              Roadmaps
+              <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
           </li>
+
           <li class="nav-item">
-            <a href="index.html#interview-prep" class="nav-link">Interview Prep</a>
+            <a href="#interview-prep" class="nav-link">InterviewPrep</a>
           </li>
+
+          <li class="nav-item">
+            <a href="#cheatcodes" class="nav-link">
+              CheatCodes
+              <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="#glossary" class="nav-link">TechGlossary</a>
+          </li>
+
           <li class="nav-item">
             <a href="#community" class="nav-link">Community / Blog</a>
           </li>
@@ -45,7 +67,7 @@
         <!-- Search Input -->
         <div class="search-box">
           <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-          <input type="search" id="site-search" placeholder="Search roadmaps, skills..." aria-label="Search content" />
+          <input type="search" id="site-search" placeholder="Search roadmaps, topics..." aria-label="Search content" />
           <kbd class="search-shortcut">Ctrl K</kbd>
         </div>
 
@@ -55,176 +77,55 @@
         </button>
 
         <!-- CTA Button -->
-        <a href="#role-roadmaps" class="btn btn-primary">Browse Paths</a>
+        <a href="#roadmaps" class="btn btn-primary">Explore Roadmaps</a>
       </div>
 
     </div>
   </header>
 
   <!-- =========================================================================
-       2. ROADMAP SUBPAGE HERO SECTION
+       2. HERO SECTION
        ========================================================================= -->
   <section class="hero-section">
     <div class="container hero-container">
       
       <div class="hero-content">
-        <h1 class="hero-title">Structured Learning Paths from Zero to Mastery.</h1>
+        <h1 class="hero-title">Master Tech Skills &amp; Land Your Dream Job with Confidence.</h1>
         <p class="hero-subtitle">
-          Here you will have a dedicated roadmap for the exact Role and Skills you want to gain. Eliminate tutorial hell with clear, step-by-step developer milestones.
+          Step-by-step career roadmaps, real-world interview questions, and essential tech terminologies curated for developers at all levels.
         </p>
 
-        <!-- Quick Jump Filter Buttons -->
+        <!-- Dual CTAs -->
         <div class="hero-cta-group">
-          <a href="#role-roadmaps" class="btn btn-primary btn-large">Role-Based Paths</a>
-          <a href="#skill-roadmaps" class="btn btn-outline btn-large">Skill-Based Paths</a>
+          <a href="pages/roadmap/roadmap.html" class="btn btn-primary btn-large">Explore Roadmaps</a>
+          <a href="#interview-prep" class="btn btn-outline btn-large">Browse Interview Q&amp;A</a>
         </div>
 
+        <!-- Social Proof -->
         <div class="hero-trust-badge">
-          <span class="trust-text">Updated for 2026 industry standards and tech stacks.</span>
+          <span class="trust-text">Trusted by learners aiming for FAANG, startups, and top tech roles.</span>
         </div>
       </div>
 
-      <!-- Roadmap Zero to Expert Zigzag Path Visual -->
+      <!-- Hero Visual / Code Graphic Mockup -->
       <div class="hero-visual">
-        <div class="zigzag-card">
-          <div class="zigzag-header">
-            <div class="dot-group">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
-            </div>
-            <span class="zigzag-card-title">DEV_MASTERY_ROADMAP.SVG</span>
-            <span class="badge-live">LIVE PATH</span>
+        <div class="code-preview-card">
+          <div class="card-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="file-title">devsutra_roadmap.config.ts</span>
           </div>
-
-          <div class="zigzag-body">
-            <svg class="roadmap-svg" viewBox="0 0 540 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <!-- Line Gradient -->
-                <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#EF8557"/>
-                  <stop offset="50%" stop-color="#38bdf8"/>
-                  <stop offset="100%" stop-color="#22c55e"/>
-                </linearGradient>
-
-                <!-- Glow Filters -->
-                <filter id="glow-start" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="6" result="blur"/>
-                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-                </filter>
-                <filter id="glow-end" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="8" result="blur"/>
-                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
-                </filter>
-
-                <!-- Pulsing CSS inside SVG -->
-                <style>
-                  .pulse-ring {
-                    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-                    transform-origin: center;
-                  }
-                  @keyframes pulse {
-                    0% { r: 18px; opacity: 0.8; }
-                    100% { r: 32px; opacity: 0; }
-                  }
-                  .dash-line {
-                    stroke-dasharray: 8 6;
-                    animation: dashMove 20s linear infinite;
-                  }
-                  @keyframes dashMove {
-                    to { stroke-dashoffset: -100; }
-                  }
-                </style>
-              </defs>
-
-              <!-- Main Zigzag Path Track (Background) -->
-              <path class="zigzag-track-bg" d="M 80,60 H 460 C 490,60 490,160 460,160 H 80 C 50,160 50,260 80,260 H 460" 
-                    stroke="rgba(255, 255, 255, 0.1)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-
-              <!-- Animated Gradient Path -->
-              <path class="zigzag-track dash-line" d="M 80,60 H 460 C 490,60 490,160 460,160 H 80 C 50,160 50,260 80,260 H 460" 
-                    stroke="url(#pathGradient)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-
-              <!-- INTERMEDIATE DOTS (MILSTONES) -->
-              <!-- Point 1 (Step 1) -->
-              <g class="node-group">
-                <circle cx="210" cy="60" r="7" fill="#1e293b" stroke="#EF8557" stroke-width="3"/>
-                <circle cx="210" cy="60" r="3" fill="#EF8557"/>
-                <text x="210" y="38" text-anchor="middle" class="svg-node-text">HTML/CSS</text>
-              </g>
-
-              <!-- Point 2 (Step 2) -->
-              <g class="node-group">
-                <circle cx="340" cy="60" r="7" fill="#1e293b" stroke="#EF8557" stroke-width="3"/>
-                <circle cx="340" cy="60" r="3" fill="#EF8557"/>
-                <text x="340" y="38" text-anchor="middle" class="svg-node-text">JavaScript</text>
-              </g>
-
-              <!-- Point 3 (Corner turn) -->
-              <g class="node-group">
-                <circle cx="360" cy="160" r="7" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
-                <circle cx="360" cy="160" r="3" fill="#38bdf8"/>
-                <text x="360" y="190" text-anchor="middle" class="svg-node-text">React & Frameworks</text>
-              </g>
-
-              <!-- Point 4 (Mid Way) -->
-              <g class="node-group">
-                <circle cx="210" cy="160" r="7" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
-                <circle cx="210" cy="160" r="3" fill="#38bdf8"/>
-                <text x="210" y="190" text-anchor="middle" class="svg-node-text">Backend & APIs</text>
-              </g>
-
-              <!-- Point 5 (Step 5) -->
-              <g class="node-group">
-                <circle cx="210" cy="260" r="7" fill="#1e293b" stroke="#22c55e" stroke-width="3"/>
-                <circle cx="210" cy="260" r="3" fill="#22c55e"/>
-                <text x="210" y="292" text-anchor="middle" class="svg-node-text">System Design</text>
-              </g>
-
-              <!-- Point 6 (Step 6) -->
-              <g class="node-group">
-                <circle cx="340" cy="260" r="7" fill="#1e293b" stroke="#22c55e" stroke-width="3"/>
-                <circle cx="340" cy="260" r="3" fill="#22c55e"/>
-                <text x="340" y="292" text-anchor="middle" class="svg-node-text">Cloud & DevOps</text>
-              </g>
-
-              <!-- ========================================== -->
-              <!-- STARTING POINT ("ZERO") -->
-              <!-- ========================================== -->
-              <g class="start-point" filter="url(#glow-start)">
-                <circle cx="80" cy="60" r="20" class="pulse-ring" fill="none" stroke="#EF8557" stroke-width="2"/>
-                <circle cx="80" cy="60" r="16" fill="#EF8557"/>
-                <circle cx="80" cy="60" r="12" fill="#0f172a" stroke="#ffffff" stroke-width="2"/>
-              </g>
-              <!-- ZERO Label Card -->
-              <g transform="translate(80, 108)">
-                <rect x="-42" y="-14" width="84" height="28" rx="14" fill="#EF8557"/>
-                <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-weight="900" font-size="12" letter-spacing="1">ZERO</text>
-              </g>
-
-              <!-- ========================================== -->
-              <!-- END POINT ("EXPERT") -->
-              <!-- ========================================== -->
-              <g class="end-point" filter="url(#glow-end)">
-                <circle cx="460" cy="260" r="22" class="pulse-ring" fill="none" stroke="#22c55e" stroke-width="2"/>
-                <circle cx="460" cy="260" r="18" fill="#22c55e"/>
-                <circle cx="460" cy="260" r="13" fill="#0f172a" stroke="#ffffff" stroke-width="2.5"/>
-                <!-- Star Icon inside Expert node -->
-                <path d="M460,253 L462,258 L467,258 L463,261 L465,266 L460,263 L455,266 L457,261 L453,258 L458,258 Z" fill="#22c55e"/>
-              </g>
-              <!-- EXPERT Label Card -->
-              <g transform="translate(460, 310)">
-                <rect x="-48" y="-14" width="96" height="28" rx="14" fill="#22c55e"/>
-                <text x="0" y="4" text-anchor="middle" fill="#0f172a" font-weight="900" font-size="12" letter-spacing="1">EXPERT</text>
-              </g>
-
-            </svg>
-          </div>
-
-          <!-- Bottom Status Banner -->
-          <div class="zigzag-footer">
-            <span class="status-indicator"></span>
-            <span class="footer-text">Continuous Progression • Interactive Mastery Path</span>
+          <div class="card-body">
+            <pre><code><span class="keyword">const</span> <span class="variable">careerPath</span> = {
+  <span class="property">goal</span>: <span class="string">'Senior Full Stack Engineer'</span>,
+  <span class="property">status</span>: <span class="string">'In Progress'</span>,
+  <span class="property">milestones</span>: [
+    <span class="string">'System Design Fundamentals'</span>,
+    <span class="string">'Distributed Databases'</span>,
+    <span class="string">'Frontend Performance'</span>
+  ]
+};</code></pre>
           </div>
         </div>
       </div>
@@ -233,305 +134,259 @@
   </section>
 
   <!-- =========================================================================
-       3. MAIN ROADMAP CONTENT
+       3. CORE CONTENT SECTIONS
        ========================================================================= -->
   <main id="main-content">
 
-    <!-- A. ROLE-BASED ROADMAPS SECTION -->
-<section id="role-roadmaps" class="section roadmaps-section">
-  <div class="container">
-    
-    <div class="section-header text-center">
-      <h2 class="section-title">Role-Based Roadmaps</h2>
-      <p class="section-description">End-to-end career roadmaps designed to take you step-by-step into high-demand engineering roles.</p>
-    </div>
-
-    <!-- Role Cards Grid -->
-    <div class="grid grid-3-col" id="role-cards-grid">
-      
-      <!-- DEFAULT INITIAL 6 CARDS -->
-      <!-- Role 1: Frontend -->
-      <article class="card roadmap-card">
-        <div class="card-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-        </div>
-        <h3 class="card-title">Frontend Developer</h3>
-        <p class="card-text">Step-by-step path covering HTML, CSS, JavaScript, React, Next.js, and web performance.</p>
-        <div class="card-tags"><span class="card-tag">HTML/CSS</span><span class="card-tag">React</span><span class="card-tag">TypeScript</span></div>
-        <a href="#" class="card-link">View Detailed Path <span aria-hidden="true">&rarr;</span></a>
-      </article>
-
-      <!-- Role 2: Backend -->
-      <article class="card roadmap-card">
-        <div class="card-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
-        </div>
-        <h3 class="card-title">Backend Developer</h3>
-        <p class="card-text">APIs, Node.js/Python, Microservices, System Architecture, and SQL/NoSQL databases.</p>
-        <div class="card-tags"><span class="card-tag">APIs</span><span class="card-tag">Node.js</span><span class="card-tag">PostgreSQL</span></div>
-        <a href="#" class="card-link">View Detailed Path <span aria-hidden="true">&rarr;</span></a>
-      </article>
-
-      <!-- Role 3: DevOps -->
-      <article class="card roadmap-card">
-        <div class="card-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12A10 10 0 1 0 12 22 10 10 0 0 0 22 12z"></path><path d="M12 2a10 10 0 0 1 10 10"></path><path d="M12 6v6l4 2"></path></svg>
-        </div>
-        <h3 class="card-title">DevOps Engineer</h3>
-        <p class="card-text">CI/CD pipelines, Docker, Kubernetes, Cloud (AWS/GCP), and Infrastructure as Code.</p>
-        <div class="card-tags"><span class="card-tag">Docker</span><span class="card-tag">AWS</span><span class="card-tag">Kubernetes</span></div>
-        <a href="#" class="card-link">View Detailed Path <span aria-hidden="true">&rarr;</span></a>
-      </article>
-
-      <!-- Role 4: Full Stack -->
-      <article class="card roadmap-card">
-        <div class="card-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-        </div>
-        <h3 class="card-title">Full Stack Developer</h3>
-        <p class="card-text">Combine client and server mastery to build end-to-end scalable web applications.</p>
-        <div class="card-tags"><span class="card-tag">Next.js</span><span class="card-tag">GraphQL</span><span class="card-tag">Prisma</span></div>
-        <a href="#" class="card-link">View Detailed Path <span aria-hidden="true">&rarr;</span></a>
-      </article>
-
-      <!-- Role 5: Data Scientist -->
-      <article class="card roadmap-card">
-        <div class="card-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-        </div>
-        <h3 class="card-title">Data Scientist</h3>
-        <p class="card-text">Statistics, Python, data analysis, machine learning pipelines, and visualization.</p>
-        <div class="card-tags"><span class="card-tag">Python</span><span class="card-tag">Pandas</span><span class="card-tag">Scikit-Learn</span></div>
-        <a href="#" class="card-link">View Detailed Path <span aria-hidden="true">&rarr;</span></a>
-      </article>
-
-      <!-- Role 6: AI / ML Engineer -->
-      <article class="card roadmap-card">
-        <div class="card-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-        </div>
-        <h3 class="card-title">AI / ML Engineer</h3>
-        <p class="card-text">Deep neural networks, PyTorch, Large Language Models (LLMs), NLP, and model deployment.</p>
-        <div class="card-tags"><span class="card-tag">PyTorch</span><span class="card-tag">LLMs</span><span class="card-tag">Transformers</span></div>
-        <a href="#" class="card-link">View Detailed Path <span aria-hidden="true">&rarr;</span></a>
-      </article>
-
-
-      <!-- BATCH 2: NEXT 6 ROLES (HIDDEN BY DEFAULT) -->
-      <!-- Role 7: Mobile App Developer -->
-      <article class="card roadmap-card hidden-card">
-        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg></div>
-        <h3 class="card-title">Mobile App Developer</h3>
-        <p class="card-text">Cross-platform and native mobile applications with React Native, Flutter, Swift, and Kotlin.</p>
-        <div class="card-tags"><span class="card-tag">React Native</span><span class="card-tag">Flutter</span><span class="card-tag">iOS/Android</span></div>
-        <a href="#" class="card-link">View Detailed Path <span aria-hidden="true">&rarr;</span></a>
-      </article>
-
-      <!-- Role 8: Cybersecurity Engineer -->
-      <article class="card roadmap-card hidden-card">
-        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
-        <h3 class="card-title">Cybersecurity Engineer</h3>
-        <p class="card-text">Application security, penetration testing, ethical hacking, network defense, and cryptography.</p>
-        <div class="card-tags"><span class="card-tag">Ethical Hacking</span><span class="card-tag">OWASP</span><span class="card-tag">Network Security</span></div>
-        <a href="#" class="card-link">View Detailed Path <span aria-hidden="true">&rarr;</span></a>
-      </article>
-
-      <!-- Role 9: Cloud Architect -->
-      <article class="card roadmap-card hidden-card">
-        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg></div>
-        <h3 class="card-title">Cloud Architect</h3>
-        <p class="card-text">Design resilient, highly available cloud infrastructure on AWS, Azure, and Google Cloud.</p>
-        <div class="card-tags"><span class="card-tag">AWS</span><span class="card-tag">Azure</span><span class="card-tag">Terraform</span></div>
-        <a href="#" class="card-link">View Detailed Path <span aria-hidden="true">&rarr;</span></a>
-      </article>
-
-      <!-- Role 10: Data Engineer -->
-      <article class="card roadmap-card hidden-card">
-        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg></div>
-        <h3 class="card-title">Data Engineer</h3>
-        <p class="card-text">Build robust ETL pipelines, data warehouses, and big data streaming platforms with Apache Spark.</p>
-        <div class="card-tags"><span class="card-tag">Apache Spark</span><span class="card-tag">Snowflake</span><span class="card-tag">ETL</span></div>
-        <a href="#" class="card-link">View Detailed Path <span aria-hidden="true">&rarr;</span></a>
-      </article>
-
-      <!-- Role 11: QA Automation Engineer -->
-      <article class="card roadmap-card hidden-card">
-        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div>
-        <h3 class="card-title">QA Automation Engineer</h3>
-        <p class="card-text">Automated testing suites, E2E test frameworks with Cypress/Playwright, and performance testing.</p>
-        <div class="card-tags"><span class="card-tag">Playwright</span><span class="card-tag">Cypress</span><span class="card-tag">CI Testing</span></div>
-        <a href="#" class="card-link">View Detailed Path <span aria-hidden="true">&rarr;</span></a>
-      </article>
-
-      <!-- Role 12: Blockchain / Web3 Developer -->
-      <article class="card roadmap-card hidden-card">
-        <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div>
-        <h3 class="card-title">Blockchain &amp; Web3 Developer</h3>
-        <p class="card-text">Smart contracts development with Solidity, Ethereum architecture, dApps, and decentralization.</p>
-        <div class="card-tags"><span class="card-tag">Solidity</span><span class="card-tag">Ethers.js</span><span class="card-tag">Smart Contracts</span></div>
-        <a href="#" class="card-link">View Detailed Path <span aria-hidden="true">&rarr;</span></a>
-      </article>
-
-    </div>
-
-    <!-- EXPLORE MORE BUTTON ACTION AREA -->
-    <div class="explore-more-container text-center">
-      <button id="explore-more-roles-btn" class="btn btn-primary btn-large">
-        Explore More Roles <span class="btn-arrow">&darr;</span>
-      </button>
-      <p id="no-more-roles-msg" class="no-more-msg hidden-card">
-        ✨ You've reached the end! All available role-based roadmaps are displayed.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-    <!-- B. SKILL-BASED ROADMAPS SECTION -->
-    <section id="skill-roadmaps" class="section roadmaps-section">
+    <!-- A. POPULAR CAREER & SKILL ROADMAPS SECTION -->
+    <section id="roadmaps" class="section roadmaps-section">
       <div class="container">
         
         <div class="section-header text-center">
-          <h2 class="section-title">Skill-Based Roadmaps</h2>
-          <p class="section-description">Targeted learning paths focused on mastering specific frameworks, databases, and core technical skills.</p>
+          <h2 class="section-title">Popular Career &amp; Skill Roadmaps</h2>
+          <p class="section-description">Clear, step-by-step learning paths designed to guide you from beginner to job-ready.</p>
         </div>
 
-        <!-- Skill Cards Grid -->
-        <div class="grid grid-3-col" id="skill-cards-grid">
+        <!-- Roadmaps Grid -->
+        <div class="grid grid-3-col">
           
-          <!-- DEFAULT INITIAL 6 SKILLS -->
-          <!-- Skill 1: System Design -->
+          <!-- Card 1: Frontend -->
           <article class="card roadmap-card">
             <div class="card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"></rect><rect x="2" y="14" width="20" height="8" rx="2"></rect></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
             </div>
-            <h3 class="card-title">System Design</h3>
-            <p class="card-text">Master distributed systems, caching, message queues, load balancing, and database sharding.</p>
-            <div class="card-tags"><span class="card-tag">Scalability</span><span class="card-tag">Redis</span><span class="card-tag">Kafka</span></div>
-            <a href="#" class="card-link">View Skill Roadmap <span aria-hidden="true">&rarr;</span></a>
+            <h3 class="card-title">Frontend Developer</h3>
+            <p class="card-text">Master HTML, CSS, JavaScript, React, Next.js, and modern web performance optimization techniques.</p>
+            <div class="card-tags">
+              <span class="card-tag">HTML/CSS</span>
+              <span class="card-tag">React</span>
+              <span class="card-tag">TypeScript</span>
+            </div>
+            <a href="/roadmaps/frontend" class="card-link">
+              View Roadmap <span aria-hidden="true">&rarr;</span>
+            </a>
           </article>
 
-          <!-- Skill 2: React & Next.js -->
+          <!-- Card 2: Backend (Matching Design Preview) -->
           <article class="card roadmap-card">
             <div class="card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(30 12 12)"></ellipse><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(90 12 12)"></ellipse><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(150 12 12)"></ellipse></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
             </div>
-            <h3 class="card-title">React &amp; Next.js</h3>
-            <p class="card-text">From JSX fundamentals and hooks to Server Components, App Router, and SSR optimization.</p>
-            <div class="card-tags"><span class="card-tag">React 19</span><span class="card-tag">App Router</span><span class="card-tag">SSR</span></div>
-            <a href="#" class="card-link">View Skill Roadmap <span aria-hidden="true">&rarr;</span></a>
+            <h3 class="card-title">Backend Developer</h3>
+            <p class="card-text">APIs, Node.js/Python, Microservices, System Architecture, and SQL/NoSQL databases.</p>
+            <div class="card-tags">
+              <span class="card-tag">APIs</span>
+              <span class="card-tag">Node.js</span>
+              <span class="card-tag">PostgreSQL</span>
+            </div>
+            <a href="/roadmaps/backend" class="card-link">
+              View Roadmap <span aria-hidden="true">&rarr;</span>
+            </a>
           </article>
 
-          <!-- Skill 3: PostgreSQL & SQL -->
+          <!-- Card 3: DevOps -->
           <article class="card roadmap-card">
             <div class="card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12A10 10 0 1 0 12 22 10 10 0 0 0 22 12z"></path>
+                <path d="M12 2a10 10 0 0 1 10 10"></path>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
             </div>
-            <h3 class="card-title">PostgreSQL &amp; SQL Mastery</h3>
-            <p class="card-text">Indexing, execution plans, ACID transactions, complex joins, and relational data modeling.</p>
-            <div class="card-tags"><span class="card-tag">SQL</span><span class="card-tag">Indexing</span><span class="card-tag">Optimization</span></div>
-            <a href="#" class="card-link">View Skill Roadmap <span aria-hidden="true">&rarr;</span></a>
+            <h3 class="card-title">DevOps Engineer</h3>
+            <p class="card-text">CI/CD pipelines, Docker, Kubernetes, Cloud (AWS/GCP), and Infrastructure as Code.</p>
+            <div class="card-tags">
+              <span class="card-tag">Docker</span>
+              <span class="card-tag">AWS</span>
+              <span class="card-tag">Kubernetes</span>
+            </div>
+            <a href="/roadmaps/devops" class="card-link">
+              View Roadmap <span aria-hidden="true">&rarr;</span>
+            </a>
           </article>
 
-          <!-- Skill 4: Docker & Containers -->
+          <!-- Card 4: Full Stack -->
           <article class="card roadmap-card">
             <div class="card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
             </div>
-            <h3 class="card-title">Docker &amp; Containers</h3>
-            <p class="card-text">Containerization, Dockerfiles, Docker Compose, networking, volumes, and multi-stage builds.</p>
-            <div class="card-tags"><span class="card-tag">Containers</span><span class="card-tag">Compose</span><span class="card-tag">DevOps</span></div>
-            <a href="#" class="card-link">View Skill Roadmap <span aria-hidden="true">&rarr;</span></a>
+            <h3 class="card-title">Full Stack Developer</h3>
+            <p class="card-text">Combine frontend and server mastery to build end-to-end scalable web applications.</p>
+            <div class="card-tags">
+              <span class="card-tag">Next.js</span>
+              <span class="card-tag">GraphQL</span>
+              <span class="card-tag">Prisma</span>
+            </div>
+            <a href="/roadmaps/fullstack" class="card-link">
+              View Roadmap <span aria-hidden="true">&rarr;</span>
+            </a>
           </article>
 
-          <!-- Skill 5: Python Engineering -->
+          <!-- Card 5: Data Science -->
           <article class="card roadmap-card">
             <div class="card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
             </div>
-            <h3 class="card-title">Python Engineering</h3>
-            <p class="card-text">OOP, async/await, FastAPI, web scraping, testing, and production application patterns.</p>
-            <div class="card-tags"><span class="card-tag">FastAPI</span><span class="card-tag">AsyncIO</span><span class="card-tag">PyTest</span></div>
-            <a href="#" class="card-link">View Skill Roadmap <span aria-hidden="true">&rarr;</span></a>
+            <h3 class="card-title">Data Scientist</h3>
+            <p class="card-text">Statistics, Python, data analysis, machine learning pipelines, and visualization.</p>
+            <div class="card-tags">
+              <span class="card-tag">Python</span>
+              <span class="card-tag">Pandas</span>
+              <span class="card-tag">Scikit-Learn</span>
+            </div>
+            <a href="/roadmaps/data-science" class="card-link">
+              View Roadmap <span aria-hidden="true">&rarr;</span>
+            </a>
           </article>
 
-          <!-- Skill 6: Git & Version Control -->
+          <!-- Card 6: AI / ML Engineer -->
           <article class="card roadmap-card">
             <div class="card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="6" y1="9" x2="6" y2="15"></line><path d="M18 15V9a6 6 0 0 0-6-6H6"></path></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
             </div>
-            <h3 class="card-title">Git &amp; Version Control</h3>
-            <p class="card-text">Branching strategies, interactive rebase, cherry-pick, conflict resolution, and PR workflows.</p>
-            <div class="card-tags"><span class="card-tag">Git CLI</span><span class="card-tag">Rebase</span><span class="card-tag">GitHub</span></div>
-            <a href="#" class="card-link">View Skill Roadmap <span aria-hidden="true">&rarr;</span></a>
-          </article>
-
-
-          <!-- BATCH 2: NEXT 6 SKILLS (HIDDEN BY DEFAULT) -->
-          <!-- Skill 7: GraphQL & REST APIs -->
-          <article class="card roadmap-card hidden-card">
-            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></div>
-            <h3 class="card-title">GraphQL &amp; API Design</h3>
-            <p class="card-text">Schema design, mutations, resolvers, caching, and building robust RESTful & GraphQL APIs.</p>
-            <div class="card-tags"><span class="card-tag">GraphQL</span><span class="card-tag">REST</span><span class="card-tag">Apollo</span></div>
-            <a href="#" class="card-link">View Skill Roadmap <span aria-hidden="true">&rarr;</span></a>
-          </article>
-
-          <!-- Skill 8: Kubernetes & Orchestration -->
-          <article class="card roadmap-card hidden-card">
-            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
-            <h3 class="card-title">Kubernetes Orchestration</h3>
-            <p class="card-text">Pods, Deployments, Services, Helm charts, ingress controllers, and cluster management.</p>
-            <div class="card-tags"><span class="card-tag">K8s</span><span class="card-tag">Helm</span><span class="card-tag">Cluster Management</span></div>
-            <a href="#" class="card-link">View Skill Roadmap <span aria-hidden="true">&rarr;</span></a>
-          </article>
-
-          <!-- Skill 9: TypeScript Mastery -->
-          <article class="card roadmap-card hidden-card">
-            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6"></path><path d="M8 6l-6 6 6 6"></path></svg></div>
-            <h3 class="card-title">TypeScript Mastery</h3>
-            <p class="card-text">Advanced generics, conditional types, utility types, type guards, and strict type safety.</p>
-            <div class="card-tags"><span class="card-tag">TypeScript</span><span class="card-tag">Generics</span><span class="card-tag">Type Safety</span></div>
-            <a href="#" class="card-link">View Skill Roadmap <span aria-hidden="true">&rarr;</span></a>
-          </article>
-
-          <!-- Skill 10: Redis & In-Memory Caching -->
-          <article class="card roadmap-card hidden-card">
-            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
-            <h3 class="card-title">Redis &amp; Caching Strategies</h3>
-            <p class="card-text">Data structures, pub/sub messaging, rate limiting, session storage, and cache invalidation.</p>
-            <div class="card-tags"><span class="card-tag">Redis</span><span class="card-tag">Caching</span><span class="card-tag">Pub/Sub</span></div>
-            <a href="#" class="card-link">View Skill Roadmap <span aria-hidden="true">&rarr;</span></a>
-          </article>
-
-          <!-- Skill 11: CI/CD & GitHub Actions -->
-          <article class="card roadmap-card hidden-card">
-            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12A10 10 0 1 0 12 22 10 10 0 0 0 22 12z"></path><path d="M12 6v6l4 2"></path></svg></div>
-            <h3 class="card-title">CI/CD &amp; GitHub Actions</h3>
-            <p class="card-text">Automated build, test, and deployment workflows, matrix builds, and secret management.</p>
-            <div class="card-tags"><span class="card-tag">GitHub Actions</span><span class="card-tag">CI/CD</span><span class="card-tag">Automation</span></div>
-            <a href="#" class="card-link">View Skill Roadmap <span aria-hidden="true">&rarr;</span></a>
-          </article>
-
-          <!-- Skill 12: Microservices Architecture -->
-          <article class="card roadmap-card hidden-card">
-            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"></rect><rect x="2" y="14" width="20" height="8" rx="2"></rect></svg></div>
-            <h3 class="card-title">Microservices Architecture</h3>
-            <p class="card-text">Service discovery, API gateways, event-driven communication, saga pattern, and resilience.</p>
-            <div class="card-tags"><span class="card-tag">Microservices</span><span class="card-tag">Event-Driven</span><span class="card-tag">API Gateway</span></div>
-            <a href="#" class="card-link">View Skill Roadmap <span aria-hidden="true">&rarr;</span></a>
+            <h3 class="card-title">AI / ML Engineer</h3>
+            <p class="card-text">Deep neural networks, PyTorch, Large Language Models (LLMs), NLP, and model deployment.</p>
+            <div class="card-tags">
+              <span class="card-tag">PyTorch</span>
+              <span class="card-tag">LLMs</span>
+              <span class="card-tag">Transformers</span>
+            </div>
+            <a href="/roadmaps/ai-ml" class="card-link">
+              View Roadmap <span aria-hidden="true">&rarr;</span>
+            </a>
           </article>
 
         </div>
 
-        <!-- EXPLORE MORE BUTTON ACTION AREA FOR SKILLS -->
-        <div class="explore-more-container text-center">
-          <button id="explore-more-skills-btn" class="btn btn-primary btn-large">
-            Explore More Skills <span class="btn-arrow">&darr;</span>
-          </button>
-          <p id="no-more-skills-msg" class="no-more-msg hidden-card">
-            ✨ You've reached the end! All available skill-based roadmaps are displayed.
-          </p>
+        <div class="section-footer text-center">
+          <a href="pages/roadmap/roadmap.html" class="btn btn-secondary">View All Roadmaps</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- B. TECH INTERVIEW PREP & GLOSSARY (SPLIT LAYOUT) -->
+    <section id="interview-prep" class="section interview-prep-section">
+      <div class="container">
+        
+        <div class="grid grid-2-col">
+          
+          <!-- Left Column: Skills-Based Interview Questions -->
+          <div class="split-col">
+            <h2 class="split-col-title">Skills-Based Interview Q&amp;A</h2>
+            <p class="split-col-desc">Real-world technical questions categorized by language and architecture.</p>
+            
+            <!-- Category Pills -->
+            <div class="category-tags">
+              <span class="tag active">JavaScript</span>
+              <span class="tag">Python</span>
+              <span class="tag">System Design</span>
+              <span class="tag">SQL</span>
+            </div>
+
+            <!-- Accordion Questions Group -->
+            <div class="accordion-group">
+              <div class="accordion-item active">
+                <div class="accordion-header">
+                  <span>What is event delegation in JavaScript?</span>
+                  <svg class="accordion-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+                <div class="accordion-content">
+                  Event delegation is a design pattern where you attach a single event listener to a parent element to handle events for all its present or future child elements using event bubbling.
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <div class="accordion-header">
+                  <span>How does Closures work in JS?</span>
+                  <svg class="accordion-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+                <div class="accordion-content">
+                  A closure is the combination of a function bundled together with references to its surrounding state (the lexical environment).
+                </div>
+              </div>
+            </div>
+
+            <a href="/interview-questions" class="btn-link">Browse All Interview Questions <span aria-hidden="true">&rarr;</span></a>
+          </div>
+
+          <!-- Right Column: Most Used Terms in Tech Interviews -->
+          <div class="split-col">
+            <h2 class="split-col-title">Most Used Tech Terms</h2>
+            <p class="split-col-desc">Click any term for a quick 2-sentence explanation.</p>
+
+            <!-- Quick-Glance Pill Tags -->
+            <div class="glossary-pills">
+              <span class="pill active">Idempotency</span>
+              <span class="pill">CAP Theorem</span>
+              <span class="pill">CORS</span>
+              <span class="pill">Rate Limiting</span>
+              <span class="pill">Sharding</span>
+              <span class="pill">Load Balancing</span>
+            </div>
+
+            <!-- Term Definition Card -->
+            <div class="pill-card">
+              <h4 class="pill-card-title" id="termTitle">Idempotency</h4>
+              <p class="pill-card-desc" id="termDesc">An operation is idempotent if executing it multiple times produces the exact same result as executing it once. Essential for API design (e.g., HTTP PUT/DELETE requests).</p>
+            </div>
+
+            <a href="/glossary" class="btn-link">Explore Tech Glossary <span aria-hidden="true">&rarr;</span></a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- C. WHY CHOOSE US / VALUE PROPOSITION SECTION -->
+    <section class="section value-prop-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <h2 class="section-title">Why DevSutra?</h2>
+          <p class="section-description">Built specifically to help engineers eliminate guesswork and accelerate career growth.</p>
+        </div>
+
+        <div class="grid grid-3-col">
+          
+          <div class="card value-card">
+            <div class="value-icon">📍</div>
+            <h3 class="card-title">Structured Learning</h3>
+            <p class="card-text">No more tutorial hell. Follow clear, step-by-step A-to-Z pathways curated by senior engineers.</p>
+          </div>
+
+          <div class="card value-card">
+            <div class="value-icon">🎯</div>
+            <h3 class="card-title">Interview Ready</h3>
+            <p class="card-text">Practice top-tier, battle-tested interview questions frequently asked at tech companies.</p>
+          </div>
+
+          <div class="card value-card">
+            <div class="value-icon">🔄</div>
+            <h3 class="card-title">Up-to-Date Content</h3>
+            <p class="card-text">Always aligned with modern industry standards, frameworks, and current developer best practices.</p>
+          </div>
 
         </div>
 
@@ -541,26 +396,33 @@
   </main>
 
   <!-- =========================================================================
-       4. FOOTER (SHARED WITH HOMEPAGE)
+       4. FOOTER
        ========================================================================= -->
   <footer class="footer">
     <div class="container">
       
       <div class="grid footer-grid">
         
-        <!-- Column 1: Brand -->
+        <!-- Column 1: Brand & Mission -->
         <div class="footer-col brand-col">
-          <a href="index.html" class="brand-logo footer-logo">
+          <a href="/" class="brand-logo footer-logo">
             <svg class="logo-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
             <span class="logo-text">DevSutra</span>
           </a>
           <p class="footer-mission">
             Empowering developers to master technical skills and navigate tech interviews with clarity and confidence.
           </p>
+          <!-- Social Media Links -->
           <div class="social-links">
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
           </div>
         </div>
 
@@ -572,6 +434,7 @@
             <li><a href="/roadmaps/backend">Backend Developer</a></li>
             <li><a href="/roadmaps/devops">DevOps Engineer</a></li>
             <li><a href="/roadmaps/data-science">Data Science</a></li>
+            <li><a href="/roadmaps/mobile">Mobile Development</a></li>
           </ul>
         </div>
 
@@ -582,21 +445,24 @@
             <li><a href="/interview-questions">Top Interview Questions</a></li>
             <li><a href="/glossary">Tech Glossary</a></li>
             <li><a href="/system-design">System Design Basics</a></li>
+            <li><a href="/behavioral-prep">Behavioral Prep</a></li>
           </ul>
         </div>
 
-        <!-- Column 4: Legal -->
+        <!-- Column 4: Company & Legal -->
         <div class="footer-col">
           <h4 class="footer-heading">Company &amp; Legal</h4>
           <ul class="footer-list">
             <li><a href="/about">About Us</a></li>
             <li><a href="/contact">Contact</a></li>
             <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
           </ul>
         </div>
 
       </div>
 
+      <!-- Copyright Bar -->
       <div class="footer-bottom text-center">
         <p>&copy; 2026 DevSutra. All rights reserved.</p>
       </div>
@@ -604,6 +470,7 @@
     </div>
   </footer>
 
-  <script src="../../assets/js/script.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/roadmap.js"></script>
 </body>
 </html>
