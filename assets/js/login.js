@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         
         console.log("Logged in with Email:", { email, remember });
-        window.location.href = "index.html";
+        window.location.href = "../../index.html";
       }, 1000);
     });
   }
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function simulateOAuthRedirect(providerName) {
     setTimeout(() => {
       localStorage.setItem("devsutra-auth-provider", providerName.toLowerCase());
-      window.location.href = "index.html";
+      window.location.href = "../../index.html";
     }, 1200);
   }
 
