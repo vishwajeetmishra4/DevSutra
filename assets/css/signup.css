@@ -1,0 +1,270 @@
+/* ==========================================================================
+   DevSutra - Sign Up Page Stylesheet (signup.css)
+   ========================================================================== */
+
+.auth-section {
+  min-height: calc(100vh - 160px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.auth-card {
+  background: var(--card-bg, #ffffff);
+  border: 1.5px solid var(--border-color, rgba(34, 97, 146, 0.15));
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .auth-card {
+  background: #0f172a;
+  border-color: rgba(234, 230, 222, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-main, #0f172a);
+  margin-bottom: 0.5rem;
+}
+
+[data-theme="dark"] .auth-title {
+  color: #EAE6DE;
+}
+
+.auth-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted, #64748b);
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main, #0f172a);
+  margin-bottom: 0.4rem;
+}
+
+[data-theme="dark"] .form-label {
+  color: #EAE6DE;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  background: var(--input-bg, #f8fafc);
+  border: 1.5px solid var(--border-color, #cbd5e1);
+  border-radius: 10px;
+  color: var(--text-main, #0f172a);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme="dark"] .form-input {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(234, 230, 222, 0.2);
+  color: #EAE6DE;
+}
+
+.form-input:focus {
+  border-color: var(--accent, #EF8557);
+  box-shadow: 0 0 0 3px rgba(239, 133, 87, 0.15);
+}
+
+.form-input.invalid {
+  border-color: #ef4444 !important;
+}
+
+.field-error {
+  display: block;
+  font-size: 0.78rem;
+  color: #ef4444;
+  margin-top: 0.35rem;
+  font-weight: 500;
+}
+
+/* Password Strength Indicator */
+.strength-meter {
+  height: 4px;
+  width: 100%;
+  background: #e2e8f0;
+  border-radius: 2px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .strength-meter {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.strength-bar {
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-text {
+  font-size: 0.75rem;
+  color: var(--text-muted, #64748b);
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.terms-link {
+  color: var(--accent, #EF8557);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}
+
+.btn-full {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+/* Social Login Buttons */
+.social-auth-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.social-btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: transparent;
+  border: 1.5px solid var(--border-color, #cbd5e1);
+  border-radius: 10px;
+  color: var(--text-main, #0f172a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+[data-theme="dark"] .social-btn {
+  border-color: rgba(234, 230, 222, 0.2);
+  color: #EAE6DE;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.social-btn:hover {
+  border-color: var(--accent, #EF8557);
+  background: rgba(239, 133, 87, 0.05);
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
+  color: var(--text-muted, #64748b);
+  font-size: 0.8rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--border-color, #cbd5e1);
+}
+
+[data-theme="dark"] .auth-divider::before,
+[data-theme="dark"] .auth-divider::after {
+  border-color: rgba(234, 230, 222, 0.15);
+}
+
+.auth-divider span {
+  padding: 0 0.75rem;
+}
+
+.auth-footer-text {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted, #64748b);
+}
+
+.auth-footer-text a {
+  color: var(--accent, #EF8557);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Step 2 OTP Verification Styling */
+.hidden-step {
+  display: none !important;
+}
+
+.otp-container {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.otp-input {
+  width: 52px;
+  height: 60px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  border: 1.5px solid var(--border-color, #cbd5e1);
+  border-radius: 12px;
+  background: var(--input-bg, #f8fafc);
+  color: var(--text-main, #0f172a);
+  outline: none;
+}
+
+[data-theme="dark"] .otp-input {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(234, 230, 222, 0.2);
+  color: #EAE6DE;
+}
+
+.otp-input:focus {
+  border-color: var(--accent, #EF8557);
+  box-shadow: 0 0 0 3px rgba(239, 133, 87, 0.15);
+}
+
+.resend-btn {
+  background: none;
+  border: none;
+  color: var(--accent, #EF8557);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.resend-btn:hover {
+  text-decoration: underline;
+}
