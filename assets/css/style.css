@@ -261,11 +261,21 @@ img, svg {
   transition: var(--transition);
 }
 
-.header-container {
+/* .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+} */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem; /* Reduced gap to fit more items */
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
 }
 
 .brand-logo {
@@ -284,10 +294,20 @@ img, svg {
   filter: drop-shadow(0 2px 8px rgba(239, 133, 87, 0.4));
 }
 
-.nav-list {
+/* .nav-list {
   display: flex;
   align-items: center;
   gap: 2rem;
+} */
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem; /* Slightly tighter gap between nav links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap; /* Allows links to wrap gracefully on medium screens */
 }
 
 .nav-link {
@@ -300,11 +320,17 @@ img, svg {
   transition: var(--transition);
 }
 
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
 .nav-link:hover {
   color: var(--accent);
 }
 
 .header-actions {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 1rem;
