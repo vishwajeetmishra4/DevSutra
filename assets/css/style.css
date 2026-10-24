@@ -1110,3 +1110,27 @@ img, svg {
     white-space: nowrap; /* Keep items in a single row that you can swipe/scroll */
   }
 }
+
+
+/* Header Auth Button Group Styling */
+.header-auth {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Compact button styling for header use */
+.btn-auth {
+  padding: 0.5rem 1rem !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  white-space: nowrap;
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  .header-auth .btn-outline {
+    display: none; /* Hide Log In outline button on smaller screens, keep Sign Up primary CTA */
+  }
+}
