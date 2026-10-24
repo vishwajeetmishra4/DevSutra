@@ -294,12 +294,6 @@ img, svg {
   filter: drop-shadow(0 2px 8px rgba(239, 133, 87, 0.4));
 }
 
-/* .nav-list {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-} */
-
 .nav-list {
   display: flex;
   align-items: center;
