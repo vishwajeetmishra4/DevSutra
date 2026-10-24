@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
 //     setTimeout(() => {
 //       // Save simulation flag & redirect to home/dashboard
 //       localStorage.setItem("devsutra-authenticated", "true");
-//       window.location.href = "index.html";
+//       window.location.href = "../user/dashboard.html";
 //     }, 1200);
 //   });
 
@@ -208,7 +208,7 @@ document.getElementById("verifyOtpBtn").addEventListener("click", () => {
 
     // setTimeout(() => {
     //   localStorage.setItem("devsutra-authenticated", "true");
-    //   window.location.href = "../../index.html";
+    //   window.location.href = "../user/dashboard.html";
     // }, 1200);
 
     setTimeout(() => {
@@ -223,7 +223,7 @@ document.getElementById("verifyOtpBtn").addEventListener("click", () => {
         localStorage.setItem("devsutra-username", firstName);
         // ------------------------------------------------------------------
 
-        window.location.href = "../../index.html";
+        window.location.href = "../user/dashboard.html";
       }, 1200);
     });
 

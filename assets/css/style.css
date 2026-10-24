@@ -1153,6 +1153,20 @@ img, svg {
   transition: all 0.2s ease;
 }
 
+/* Clickable Header User Badge Link */
+.user-badge-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.user-badge-link:hover .user-name {
+  color: var(--accent, #EF8557);
+}
+
 [data-theme="dark"] .user-profile-badge {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(234, 230, 222, 0.2);

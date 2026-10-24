@@ -291,11 +291,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
 });
 
-
-
-// Add to the top inside document.addEventListener('DOMContentLoaded', () => { ... })
-initHeaderAuthStatus();
-
 /* ==========================================================================
    HEADER AUTHENTICATION STATUS & PROFILE BADGE
    ========================================================================== */
@@ -305,19 +300,32 @@ function initHeaderAuthStatus() {
 
   const isAuthenticated = localStorage.getItem('devsutra-authenticated') === 'true';
   const username = localStorage.getItem('devsutra-username') || 'Developer';
+  const isDashboardPage = window.location.pathname.includes('dashboard.html');
 
   if (isAuthenticated) {
-    headerAuth.innerHTML = `
-      <div class="user-profile-badge">
-        <div class="user-avatar">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-        </div>
-        <span class="user-name">${username}</span>
-        <button id="logoutBtn" class="logout-btn" title="Log Out" aria-label="Log Out">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+    if (isDashboardPage) {
+      // ON DASHBOARD: Show ONLY the Log Out button in the header
+      headerAuth.innerHTML = `
+        <button id="logoutBtn" class="btn btn-outline btn-auth" title="Log Out" aria-label="Log Out">
+          Log Out
         </button>
-      </div>
-    `;
+      `;
+    } else {
+      // ON OTHER PAGES: Show full profile badge linked to Dashboard
+      headerAuth.innerHTML = `
+        <div class="user-profile-badge">
+          <a href="../pages/user/dashboard.html" class="user-badge-link" title="Go to Dashboard">
+            <div class="user-avatar">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <span class="user-name">${username}</span>
+          </a>
+          <button id="logoutBtn" class="logout-btn" title="Log Out" aria-label="Log Out">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+          </button>
+        </div>
+      `;
+    }
 
     // Handle Logout action
     const logoutBtn = document.getElementById('logoutBtn');
@@ -325,7 +333,7 @@ function initHeaderAuthStatus() {
       logoutBtn.addEventListener('click', () => {
         localStorage.removeItem('devsutra-authenticated');
         localStorage.removeItem('devsutra-username');
-        window.location.reload(); // Refresh page to restore Login/Sign Up buttons
+        window.location.href = "../../index.html"; // Redirect home on logout
       });
     }
   }
